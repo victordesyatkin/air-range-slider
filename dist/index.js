@@ -5,8 +5,9 @@
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
+var __webpack_unused_export__;
 
-Object.defineProperty(exports, "__esModule", ({ value: true }));
+__webpack_unused_export__ = ({ value: true });
 var constants;
 (function (constants) {
     constants.typeOfFunction = 'function';
@@ -30,8 +31,8 @@ function bind(target, propertyKey, descriptor) {
         }
     };
 }
-exports.bind = bind;
-exports.default = bind;
+exports.ak = bind;
+exports.ZP = bind;
 
 
 /***/ }),
@@ -17081,13 +17082,9 @@ module.exports = uniq;
 /***/ }),
 
 /***/ 7254:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3379);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_modules_typescript_loader_index_js_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_resolve_url_loader_index_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9688);
@@ -17159,7 +17156,7 @@ if (true) {
   });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_modules_typescript_loader_index_js_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_resolve_url_loader_index_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_modules_typescript_loader_index_js_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_resolve_url_loader_index_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -17439,1540 +17436,41 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 3460:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ 2177:
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var get_1 = __importDefault(__webpack_require__(7361));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var orderBy_1 = __importDefault(__webpack_require__(5472));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var utils_1 = __webpack_require__(7789);
-var DotView = /** @class */ (function (_super) {
-    __extends(DotView, _super);
-    function DotView(addition) {
-        var _this = _super.call(this) || this;
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    DotView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.render();
-    };
-    DotView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    DotView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.isRendered = false;
-        }
-    };
-    DotView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    DotView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    DotView.prototype.createView = function () {
-        if (this.props && !isUndefined_1.default(get_1.default(this.addition, ['value']))) {
-            this.view = jquery_1.default('<div/>', this.prepareAttr());
-            this.initHandles();
-        }
-    };
-    DotView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-        };
-        return attr;
-    };
-    DotView.prototype.prepareClassName = function () {
-        var _a;
-        var _b, _c;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var className = ((_c = (_b = this.props) === null || _b === void 0 ? void 0 : _b.dot) === null || _c === void 0 ? void 0 : _c.className) || '';
-        var value = get_1.default(this.addition, ['value']);
-        var values = get_1.default(this.props, ['values']);
-        var active = false;
-        if (!isUndefined_1.default(values) && !isUndefined_1.default(value)) {
-            if (values.length === 1) {
-                active = value <= values[0];
-            }
-            else if (values.length > 1) {
-                values = orderBy_1.default(values);
-                if (value >= values[0] && value <= values[values.length - 1]) {
-                    active = true;
-                }
-            }
-            return classnames_1.default(prefixCls + "__dot", className, (_a = {},
-                _a[prefixCls + "__dot_active"] = active,
-                _a));
-        }
-        return '';
-    };
-    DotView.prototype.prepareStyle = function () {
-        var _a, _b;
-        var _c, _d;
-        var readyStyle;
-        if (this.props) {
-            var value = get_1.default(this.addition, ['value'], 0);
-            var style = ((_d = (_c = this.props) === null || _c === void 0 ? void 0 : _c.dot) === null || _d === void 0 ? void 0 : _d.style) || {};
-            var _e = this.props, vertical = _e.vertical, min = _e.min, max = _e.max, reverse = _e.reverse;
-            var offset = utils_1.calcOffset(value, min, max);
-            var positionStyle = vertical
-                ? (_a = {},
-                    _a[reverse ? 'top' : 'bottom'] = offset + "%",
-                    _a[reverse ? 'bottom' : 'top'] = 'auto',
-                    _a.transform = reverse ? 'none' : "translateY(+50%)",
-                    _a) : (_b = {},
-                _b[reverse ? 'right' : 'left'] = offset + "%",
-                _b[reverse ? 'left' : 'right'] = 'auto',
-                _b.transform = "translateX(" + (reverse ? '+' : '-') + "50%)",
-                _b);
-            readyStyle = utils_1.objectToString(__assign(__assign({}, style), positionStyle));
-            return readyStyle;
-        }
-        return readyStyle;
-    };
-    DotView.prototype.updateView = function () {
-        if (this.view) {
-            this.view.attr(this.prepareAttr());
-        }
-        else {
-            this.createView();
-        }
-    };
-    DotView.prototype.handleViewClick = function (event) {
-        if (this.view && this.props) {
-            var _a = this.addition, value = _a.value, handles = _a.handles, _b = _a.index, index = _b === void 0 ? 0 : _b;
-            var handleViewClick = get_1.default(handles, ['handleViewClick']);
-            if (!isUndefined_1.default(value) && handleViewClick) {
-                handleViewClick(index, event, value);
-            }
-        }
-    };
-    DotView.prototype.initHandles = function () {
-        if (this.view) {
-            this.view.off('click', this.handleViewClick);
-            this.view.on('click', this.handleViewClick);
-        }
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], DotView.prototype, "handleViewClick", null);
-    return DotView;
-}(pubsub_1.default));
-exports.default = DotView;
+// UNUSED EXPORTS: default
+
+// EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
+var jquery = __webpack_require__(9755);
+var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
+// EXTERNAL MODULE: ./node_modules/lodash/pick.js
+var pick = __webpack_require__(8718);
+var pick_default = /*#__PURE__*/__webpack_require__.n(pick);
+// EXTERNAL MODULE: ./node_modules/lodash/get.js
+var get = __webpack_require__(7361);
+var get_default = /*#__PURE__*/__webpack_require__.n(get);
+// EXTERNAL MODULE: ./node_modules/lodash/orderBy.js
+var orderBy = __webpack_require__(5472);
+var orderBy_default = /*#__PURE__*/__webpack_require__.n(orderBy);
+// EXTERNAL MODULE: ./node_modules/lodash/merge.js
+var merge = __webpack_require__(3857);
+var merge_default = /*#__PURE__*/__webpack_require__.n(merge);
+// EXTERNAL MODULE: ./node_modules/lodash/uniq.js
+var uniq = __webpack_require__(4908);
+var uniq_default = /*#__PURE__*/__webpack_require__.n(uniq);
+// EXTERNAL MODULE: ./node_modules/lodash/isUndefined.js
+var isUndefined = __webpack_require__(2353);
+var isUndefined_default = /*#__PURE__*/__webpack_require__.n(isUndefined);
+;// CONCATENATED MODULE: ./src/helpers/utils.ts
 
 
-/***/ }),
-
-/***/ 5597:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var get_1 = __importDefault(__webpack_require__(7361));
-var uniq_1 = __importDefault(__webpack_require__(4908));
-var orderBy_1 = __importDefault(__webpack_require__(5472));
-var isArray_1 = __importDefault(__webpack_require__(1469));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var view_1 = __importDefault(__webpack_require__(3460));
-var DotsView = /** @class */ (function (_super) {
-    __extends(DotsView, _super);
-    function DotsView(addition) {
-        var _this = _super.call(this) || this;
-        _this.dots = [];
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    DotsView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    DotsView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.createOrUpdateSubViews();
-        this.appendSubViews();
-        this.render();
-    };
-    DotsView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.dots = [];
-            this.isRendered = false;
-        }
-    };
-    DotsView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    DotsView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    DotsView.cleanSubView = function (views, count) {
-        var length = views.length;
-        if (length > count) {
-            for (var index = count; index < length; index += 1) {
-                if (views[index]) {
-                    views[index].remove();
-                }
-            }
-            views.splice(count);
-        }
-    };
-    DotsView.prototype.createView = function () {
-        var _a, _b;
-        if (this.props) {
-            var on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.dot) === null || _b === void 0 ? void 0 : _b.on;
-            if (on) {
-                this.view = jquery_1.default('<div/>', this.prepareAttr());
-            }
-        }
-    };
-    DotsView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-        };
-        return attr;
-    };
-    DotsView.prototype.prepareClassName = function () {
-        var _a;
-        var _b, _c;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var className = (_c = (_b = this.props) === null || _b === void 0 ? void 0 : _b.dot) === null || _c === void 0 ? void 0 : _c.wrapClassName;
-        var vertical = get_1.default(this.props, ['vertical']);
-        return classnames_1.default(prefixCls + "__dots", className, (_a = {},
-            _a[prefixCls + "__dots_vertical"] = vertical,
-            _a));
-    };
-    DotsView.prototype.prepareStyle = function () {
-        var readyStyle;
-        if (this.props) {
-            readyStyle = '';
-        }
-        return readyStyle;
-    };
-    DotsView.prototype.updateView = function () {
-        if (this.view) {
-            if (get_1.default(this.props, ['dot', 'on'])) {
-                this.view.attr(this.prepareAttr());
-            }
-            else {
-                this.remove();
-            }
-        }
-        else {
-            this.createView();
-        }
-    };
-    DotsView.prototype.createOrUpdateSubViews = function () {
-        this.dots = this.createOrUpdateSubView(this.dots, view_1.default);
-    };
-    DotsView.prototype.createOrUpdateSubView = function (views, SubView) {
-        var _a, _b, _c, _d;
-        var readyViews = __spreadArrays(views);
-        if (this.props && this.view) {
-            var _e = this.props, min = _e.min, max = _e.max, step = _e.step, reverse = _e.reverse;
-            var values = [];
-            var on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.dot;
-            if (on) {
-                var markValues = (_d = (_c = this.props) === null || _c === void 0 ? void 0 : _c.mark) === null || _d === void 0 ? void 0 : _d.values;
-                if (isArray_1.default(markValues)) {
-                    values = __spreadArrays(markValues);
-                }
-            }
-            if (step) {
-                for (var index = min; index <= max; index += step) {
-                    values.push(index);
-                }
-            }
-            var handles = this.addition.handles;
-            values = orderBy_1.default(uniq_1.default(values), [], reverse ? 'desc' : 'asc');
-            var length_1 = values.length;
-            for (var index = 0; index < length_1; index += 1) {
-                if (readyViews[index]) {
-                    readyViews[index].setAddition({
-                        index: index,
-                        handles: handles,
-                        value: values[index],
-                    });
-                    readyViews[index].setProps(this.props);
-                }
-                else {
-                    readyViews[index] = new SubView({
-                        index: index,
-                        handles: handles,
-                        value: values[index],
-                    });
-                    readyViews[index].setProps(this.props);
-                }
-            }
-            DotsView.cleanSubView(readyViews, values.length);
-        }
-        return readyViews;
-    };
-    DotsView.prototype.appendSubViews = function () {
-        if (this.view) {
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            this.dots.forEach(this.appendSubView);
-        }
-    };
-    DotsView.prototype.appendSubView = function (subView) {
-        if (this.view) {
-            subView.render(this.view);
-        }
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], DotsView.prototype, "appendSubView", null);
-    return DotsView;
-}(pubsub_1.default));
-exports.default = DotsView;
 
 
-/***/ }),
 
-/***/ 1723:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var get_1 = __importDefault(__webpack_require__(7361));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var utils_1 = __webpack_require__(7789);
-var view_1 = __importDefault(__webpack_require__(8680));
-var HandleView = /** @class */ (function (_super) {
-    __extends(HandleView, _super);
-    function HandleView(addition) {
-        var _this = _super.call(this) || this;
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    HandleView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.appendTooltip();
-        this.render();
-    };
-    HandleView.prototype.getProps = function () {
-        return this.props;
-    };
-    HandleView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    HandleView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.isRendered = false;
-        }
-    };
-    HandleView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    HandleView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    HandleView.prototype.createView = function () {
-        if (this.props) {
-            this.view = jquery_1.default('<div/>', this.prepareAttr());
-            this.initHandles();
-        }
-    };
-    HandleView.prototype.handleViewMouseDown = function (event) {
-        var _a, _b;
-        var handleViewMouseDown = (_b = (_a = this.addition) === null || _a === void 0 ? void 0 : _a.handles) === null || _b === void 0 ? void 0 : _b.handleViewMouseDown;
-        var index = get_1.default(this.addition, ['index']);
-        if (!isUndefined_1.default(index) && handleViewMouseDown) {
-            handleViewMouseDown(index, event);
-        }
-    };
-    HandleView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-            tabindex: -1,
-        };
-        return attr;
-    };
-    HandleView.prototype.prepareClassName = function () {
-        var _a;
-        var _b, _c, _d;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var index = get_1.default(this.addition, ['index']);
-        var className = ((_d = (_c = (_b = this.props) === null || _b === void 0 ? void 0 : _b.handle) === null || _c === void 0 ? void 0 : _c.classNames) === null || _d === void 0 ? void 0 : _d[index]) || '';
-        var active = get_1.default(this.addition, ['active']);
-        return classnames_1.default(prefixCls + "__handle", className, (_a = {},
-            _a[prefixCls + "__handle_active"] = active,
-            _a));
-    };
-    HandleView.prototype.prepareStyle = function () {
-        var _a, _b;
-        var _c, _d, _e;
-        var readyStyle;
-        if (this.props) {
-            var index = get_1.default(this.addition, ['index']);
-            var style = ((_e = (_d = (_c = this.props) === null || _c === void 0 ? void 0 : _c.handle) === null || _d === void 0 ? void 0 : _d.styles) === null || _e === void 0 ? void 0 : _e[index]) || {};
-            var _f = this.props, values = _f.values, min = _f.min, max = _f.max, vertical = _f.vertical, reverse = _f.reverse;
-            var value = values[index];
-            var offset = utils_1.calcOffset(value, min, max);
-            var positionStyle = vertical
-                ? (_a = {},
-                    _a[reverse ? 'top' : 'bottom'] = offset + "%",
-                    _a[reverse ? 'bottom' : 'top'] = 'auto',
-                    _a.transform = reverse ? 'none' : "translateY(+50%)",
-                    _a) : (_b = {},
-                _b[reverse ? 'right' : 'left'] = offset + "%",
-                _b[reverse ? 'left' : 'right'] = 'auto',
-                _b.transform = "translateX(" + (reverse ? '+' : '-') + "50%)",
-                _b);
-            readyStyle = utils_1.objectToString(__assign(__assign(__assign({}, style), positionStyle), { 'z-index': "" + (index + 10) }));
-        }
-        return readyStyle;
-    };
-    HandleView.prototype.isProps = function () {
-        return !!(this.view && this.props);
-    };
-    HandleView.prototype.appendTooltip = function () {
-        var _a, _b;
-        var on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.on;
-        if (on && this.isProps()) {
-            var index = get_1.default(this.addition, ['index']);
-            var value = get_1.default(this.props, ['values', index]);
-            if (!isUndefined_1.default(value)) {
-                if (this.tooltip) {
-                    this.tooltip.setAddition({ value: value, index: index });
-                    if (this.props) {
-                        this.tooltip.setProps(this.props);
-                    }
-                }
-                else {
-                    this.tooltip = new view_1.default({ value: value, index: index });
-                    if (this.props) {
-                        this.tooltip.setProps(this.props);
-                    }
-                    this.tooltip.render(this.view);
-                }
-            }
-        }
-        else if (this.tooltip && this.view) {
-            this.tooltip.remove();
-            this.tooltip = undefined;
-            this.view.empty();
-        }
-    };
-    HandleView.prototype.updateView = function () {
-        if (this.view) {
-            this.view.attr(this.prepareAttr());
-        }
-        else {
-            this.createView();
-        }
-    };
-    HandleView.prototype.initHandles = function () {
-        if (this.view) {
-            this.view.off({
-                mousedown: this.handleViewMouseDown,
-            });
-            this.view.on({
-                mousedown: this.handleViewMouseDown,
-            });
-        }
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], HandleView.prototype, "handleViewMouseDown", null);
-    return HandleView;
-}(pubsub_1.default));
-exports.default = HandleView;
-
-
-/***/ }),
-
-/***/ 7328:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var get_1 = __importDefault(__webpack_require__(7361));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var utils_1 = __webpack_require__(7789);
-var MarkView = /** @class */ (function (_super) {
-    __extends(MarkView, _super);
-    function MarkView(addition) {
-        var _this = _super.call(this) || this;
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    MarkView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.initHandles();
-        this.prepareContent();
-        this.render();
-    };
-    MarkView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    MarkView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.isRendered = false;
-        }
-    };
-    MarkView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    MarkView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    MarkView.prototype.createView = function () {
-        if (this.props && !isUndefined_1.default(get_1.default(this.addition, ['value']))) {
-            this.view = jquery_1.default('<div/>', this.prepareAttr());
-        }
-    };
-    MarkView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-        };
-        return attr;
-    };
-    MarkView.prototype.prepareClassName = function () {
-        var _a, _b;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var className = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.className) || '';
-        return classnames_1.default(prefixCls + "__mark", className);
-    };
-    MarkView.prototype.prepareStyle = function () {
-        var _a, _b;
-        var _c, _d;
-        var readyStyle;
-        if (this.props) {
-            var value = get_1.default(this.addition, ['value'], 0);
-            var style = ((_d = (_c = this.props) === null || _c === void 0 ? void 0 : _c.mark) === null || _d === void 0 ? void 0 : _d.style) || {};
-            var _e = this.props, vertical = _e.vertical, min = _e.min, max = _e.max, reverse = _e.reverse;
-            var offset = utils_1.calcOffset(value, min, max);
-            var positionStyle = vertical
-                ? (_a = {},
-                    _a[reverse ? 'top' : 'bottom'] = offset + "%",
-                    _a[reverse ? 'bottom' : 'top'] = 'auto',
-                    _a.transform = reverse ? 'translateY(-25%)' : "translateY(+50%)",
-                    _a) : (_b = {},
-                _b[reverse ? 'right' : 'left'] = offset + "%",
-                _b[reverse ? 'left' : 'right'] = 'auto',
-                _b.transform = "translateX(" + (reverse ? '+' : '-') + "50%)",
-                _b);
-            readyStyle = utils_1.objectToString(__assign(__assign({}, style), positionStyle));
-        }
-        return readyStyle;
-    };
-    MarkView.prototype.prepareContent = function () {
-        var _a, _b;
-        if (this.view) {
-            var value = this.addition.value;
-            if (!isUndefined_1.default(value)) {
-                var render = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.render;
-                var content = "" + value;
-                if (render) {
-                    content = render(value);
-                }
-                if (content) {
-                    this.view.empty().append(content);
-                }
-            }
-        }
-    };
-    MarkView.prototype.handleViewClick = function (event) {
-        if (this.view && this.props) {
-            var _a = this.addition, value = _a.value, handles = _a.handles, _b = _a.index, index = _b === void 0 ? 0 : _b;
-            var handleViewClick = get_1.default(handles, ['handleViewClick']);
-            if (!isUndefined_1.default(value) && handleViewClick) {
-                handleViewClick(index, event, value);
-            }
-        }
-    };
-    MarkView.prototype.initHandles = function () {
-        if (this.view) {
-            this.view.off('click', this.handleViewClick);
-            this.view.on('click', this.handleViewClick);
-        }
-    };
-    MarkView.prototype.updateView = function () {
-        if (this.view) {
-            this.view.attr(this.prepareAttr());
-        }
-        else {
-            this.createView();
-        }
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], MarkView.prototype, "handleViewClick", null);
-    return MarkView;
-}(pubsub_1.default));
-exports.default = MarkView;
-
-
-/***/ }),
-
-/***/ 1697:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var get_1 = __importDefault(__webpack_require__(7361));
-var isArray_1 = __importDefault(__webpack_require__(1469));
-var uniq_1 = __importDefault(__webpack_require__(4908));
-var orderBy_1 = __importDefault(__webpack_require__(5472));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var view_1 = __importDefault(__webpack_require__(7328));
-var MarksView = /** @class */ (function (_super) {
-    __extends(MarksView, _super);
-    function MarksView(addition) {
-        var _this = _super.call(this) || this;
-        _this.marks = [];
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    MarksView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.createOrUpdateSubViews();
-        this.appendSubViews();
-        this.render();
-    };
-    MarksView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    MarksView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.marks = [];
-            this.isRendered = false;
-        }
-    };
-    MarksView.cleanSubView = function (views, count) {
-        var length = views.length;
-        if (length > count) {
-            for (var index = count; index < length; index += 1) {
-                if (views[index]) {
-                    views[index].remove();
-                }
-            }
-            views.splice(count);
-        }
-    };
-    MarksView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    MarksView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    MarksView.prototype.createView = function () {
-        var _a, _b;
-        if (this.props) {
-            var on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.on;
-            if (on) {
-                this.view = jquery_1.default('<div/>', this.prepareAttr());
-            }
-        }
-    };
-    MarksView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-        };
-        return attr;
-    };
-    MarksView.prototype.prepareClassName = function () {
-        var _a, _b;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var className = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.wrapClassName;
-        return classnames_1.default(prefixCls + "__marks", className);
-    };
-    MarksView.prototype.prepareStyle = function () {
-        var readyStyle;
-        if (this.props) {
-            readyStyle = '';
-        }
-        return readyStyle;
-    };
-    MarksView.prototype.updateView = function () {
-        if (this.view) {
-            if (get_1.default(this.props, ['mark', 'on'])) {
-                this.view.attr(this.prepareAttr());
-            }
-            else {
-                this.remove();
-            }
-        }
-        else {
-            this.createView();
-        }
-    };
-    MarksView.prototype.createOrUpdateSubViews = function () {
-        this.marks = this.createOrUpdateSubView(this.marks, view_1.default);
-    };
-    MarksView.prototype.createOrUpdateSubView = function (views, SubView) {
-        var _a, _b;
-        var readyViews = __spreadArrays(views);
-        if (this.props && this.view) {
-            var _c = this.props, min = _c.min, max = _c.max, step = _c.step, reverse = _c.reverse;
-            var values = [];
-            var markValues = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.values;
-            if (isArray_1.default(markValues)) {
-                values = __spreadArrays(markValues);
-            }
-            if (step) {
-                for (var index = min; index <= max; index += step) {
-                    values.push(index);
-                }
-            }
-            values = orderBy_1.default(uniq_1.default(values), [], reverse ? 'desc' : 'asc');
-            var length_1 = values.length;
-            var handles = this.addition.handles;
-            for (var index = 0; index < length_1; index += 1) {
-                if (!isUndefined_1.default(readyViews[index])) {
-                    readyViews[index].setAddition({
-                        index: index,
-                        handles: handles,
-                        value: values[index],
-                    });
-                    readyViews[index].setProps(this.props);
-                }
-                else {
-                    readyViews[index] = new SubView({
-                        index: index,
-                        handles: handles,
-                        value: values[index],
-                    });
-                    readyViews[index].setProps(this.props);
-                }
-            }
-            MarksView.cleanSubView(readyViews, values.length);
-        }
-        return readyViews;
-    };
-    MarksView.prototype.appendSubViews = function () {
-        if (this.view) {
-            this.marks.forEach(this.appendSubView);
-        }
-    };
-    MarksView.prototype.appendSubView = function (subView) {
-        if (this.view) {
-            subView.render(this.view);
-        }
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], MarksView.prototype, "appendSubView", null);
-    return MarksView;
-}(pubsub_1.default));
-exports.default = MarksView;
-
-
-/***/ }),
-
-/***/ 546:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var get_1 = __importDefault(__webpack_require__(7361));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var utils_1 = __webpack_require__(7789);
-var RailView = /** @class */ (function (_super) {
-    __extends(RailView, _super);
-    function RailView(addition) {
-        var _this = _super.call(this) || this;
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    RailView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.initHandles();
-        this.render();
-    };
-    RailView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    RailView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.isRendered = false;
-        }
-    };
-    RailView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    RailView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    RailView.prototype.createView = function () {
-        var _a, _b;
-        if (this.props) {
-            var on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.rail) === null || _b === void 0 ? void 0 : _b.on;
-            if (on) {
-                this.view = jquery_1.default('<div/>', this.prepareAttr());
-            }
-        }
-    };
-    RailView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-        };
-        return attr;
-    };
-    RailView.prototype.prepareClassName = function () {
-        var _a, _b;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var className = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.rail) === null || _b === void 0 ? void 0 : _b.className) || '';
-        return classnames_1.default(prefixCls + "__rail", className);
-    };
-    RailView.prototype.prepareStyle = function () {
-        var _a, _b;
-        var style = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.rail) === null || _b === void 0 ? void 0 : _b.style) || {};
-        return utils_1.objectToString(__assign({}, style));
-    };
-    RailView.prototype.updateView = function () {
-        if (this.view) {
-            if (get_1.default(this.props, ['rail', 'on'])) {
-                this.view.attr(this.prepareAttr());
-            }
-            else {
-                this.remove();
-            }
-        }
-        else {
-            this.createView();
-        }
-    };
-    RailView.prototype.handleViewClick = function (event) {
-        if (this.view && this.props) {
-            var _a = this.addition, handles = _a.handles, _b = _a.index, index = _b === void 0 ? 0 : _b;
-            var handleViewClick = get_1.default(handles, ['handleViewClick']);
-            if (handleViewClick) {
-                handleViewClick(index, event);
-            }
-        }
-    };
-    RailView.prototype.initHandles = function () {
-        if (this.view) {
-            this.view.off('click', this.handleViewClick);
-            this.view.on('click', this.handleViewClick);
-        }
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], RailView.prototype, "handleViewClick", null);
-    return RailView;
-}(pubsub_1.default));
-exports.default = RailView;
-
-
-/***/ }),
-
-/***/ 8680:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var get_1 = __importDefault(__webpack_require__(7361));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var utils_1 = __webpack_require__(7789);
-var TooltipView = /** @class */ (function (_super) {
-    __extends(TooltipView, _super);
-    function TooltipView(addition) {
-        var _this = _super.call(this) || this;
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    TooltipView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.prepareContent();
-        this.render();
-    };
-    TooltipView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    TooltipView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.isRendered = false;
-        }
-    };
-    TooltipView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    TooltipView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    TooltipView.prototype.createView = function () {
-        if (this.props && !isUndefined_1.default(get_1.default(this.addition, ['value']))) {
-            this.view = jquery_1.default('<div/>', this.prepareAttr());
-        }
-    };
-    TooltipView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-        };
-        return attr;
-    };
-    TooltipView.prototype.prepareClassName = function () {
-        var _a;
-        var _b, _c, _d, _e;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var className = ((_c = (_b = this.props) === null || _b === void 0 ? void 0 : _b.tooltip) === null || _c === void 0 ? void 0 : _c.className) || '';
-        var always = (_e = (_d = this.props) === null || _d === void 0 ? void 0 : _d.tooltip) === null || _e === void 0 ? void 0 : _e.always;
-        return classnames_1.default(prefixCls + "__tooltip", className, (_a = {},
-            _a[prefixCls + "__tooltip_always"] = always,
-            _a));
-    };
-    TooltipView.prototype.prepareStyle = function () {
-        var _a, _b;
-        var readyStyle;
-        if (this.props) {
-            var style = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.style) || {};
-            var positionStyle = {};
-            readyStyle = utils_1.objectToString(__assign(__assign({}, style), positionStyle));
-        }
-        return readyStyle;
-    };
-    TooltipView.prototype.prepareContent = function () {
-        var _a, _b;
-        if (this.view) {
-            var value = this.addition.value;
-            if (!isUndefined_1.default(value)) {
-                var render = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.render;
-                var content = "" + value;
-                if (render) {
-                    content = render(value);
-                }
-                if (content) {
-                    this.view.empty().append(content);
-                }
-            }
-        }
-    };
-    TooltipView.prototype.updateView = function () {
-        if (this.view) {
-            if (get_1.default(this.props, ['tooltip', 'on'])) {
-                this.view.attr(this.prepareAttr());
-            }
-            else {
-                this.remove();
-            }
-        }
-        else {
-            this.createView();
-        }
-    };
-    return TooltipView;
-}(pubsub_1.default));
-exports.default = TooltipView;
-
-
-/***/ }),
-
-/***/ 9590:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var get_1 = __importDefault(__webpack_require__(7361));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var utils_1 = __webpack_require__(7789);
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var TrackView = /** @class */ (function (_super) {
-    __extends(TrackView, _super);
-    function TrackView(addition) {
-        var _this = _super.call(this) || this;
-        _this.isRendered = false;
-        _this.addition = addition;
-        return _this;
-    }
-    TrackView.prototype.setProps = function (props) {
-        this.props = props;
-        this.updateView();
-        this.render();
-    };
-    TrackView.prototype.render = function (parent) {
-        if (parent) {
-            this.parent = parent;
-        }
-        if (!this.isRendered) {
-            if (this.parent && this.view) {
-                this.parent.append(this.view);
-                this.isRendered = true;
-            }
-        }
-    };
-    TrackView.prototype.remove = function () {
-        if (this.view) {
-            this.view.remove();
-            this.view = undefined;
-            this.isRendered = false;
-        }
-    };
-    TrackView.prototype.getAddition = function () {
-        return this.addition;
-    };
-    TrackView.prototype.setAddition = function (addition) {
-        this.addition = addition;
-    };
-    TrackView.prototype.createView = function () {
-        var _a, _b;
-        if (this.props && !isUndefined_1.default(get_1.default(this.addition, ['index']))) {
-            var on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.track) === null || _b === void 0 ? void 0 : _b.on;
-            if (on) {
-                this.view = jquery_1.default('<div/>', this.prepareAttr());
-            }
-        }
-    };
-    TrackView.prototype.prepareAttr = function () {
-        var attr = {
-            class: this.prepareClassName(),
-            style: this.prepareStyle(),
-        };
-        return attr;
-    };
-    TrackView.prototype.prepareClassName = function () {
-        var _a;
-        var _b, _c;
-        var prefixCls = get_1.default(this.props, ['prefixCls'], '');
-        var index = get_1.default(this.addition, ['index']);
-        var className = ((_c = (_b = this.props) === null || _b === void 0 ? void 0 : _b.track) === null || _c === void 0 ? void 0 : _c.classNames) || '';
-        return classnames_1.default(prefixCls + "__track", (_a = {}, _a[prefixCls + "__track-" + index] = true, _a), className);
-    };
-    TrackView.prototype.prepareStyle = function () {
-        var _a, _b;
-        var _c, _d, _e;
-        var readyStyle;
-        if (this.props) {
-            var index = get_1.default(this.addition, ['index']);
-            var style = ((_e = (_d = (_c = this.props) === null || _c === void 0 ? void 0 : _c.track) === null || _d === void 0 ? void 0 : _d.styles) === null || _e === void 0 ? void 0 : _e[index]) || {};
-            var _f = this.props, vertical = _f.vertical, min = _f.min, max = _f.max;
-            var reverse = this.props.reverse;
-            var _g = this.props, values = _g.values, startPoint = _g.startPoint;
-            var readyOffset = utils_1.calcOffset(values[index], min, max);
-            var offset = readyOffset;
-            var length_1;
-            if (values.length > 1) {
-                length_1 = utils_1.calcOffset(values[index + 1], min, max) - readyOffset;
-            }
-            else {
-                var trackOffset = startPoint !== undefined ? utils_1.calcOffset(startPoint, min, max) : 0;
-                offset = trackOffset;
-                length_1 = readyOffset - trackOffset;
-            }
-            if (length_1 < 0) {
-                reverse = !reverse;
-                length_1 = Math.abs(length_1);
-                offset = 100 - offset;
-            }
-            var positionStyle = vertical
-                ? (_a = {},
-                    _a[reverse ? 'top' : 'bottom'] = offset + "%",
-                    _a[reverse ? 'bottom' : 'top'] = 'auto',
-                    _a.height = length_1 + "%",
-                    _a) : (_b = {},
-                _b[reverse ? 'right' : 'left'] = offset + "%",
-                _b[reverse ? 'left' : 'right'] = 'auto',
-                _b.width = length_1 + "%",
-                _b);
-            readyStyle = utils_1.objectToString(__assign(__assign({}, positionStyle), style));
-        }
-        return readyStyle;
-    };
-    TrackView.prototype.updateView = function () {
-        if (this.view) {
-            if (get_1.default(this.props, ['track', 'on'])) {
-                this.view.attr(this.prepareAttr());
-            }
-            else {
-                this.remove();
-            }
-        }
-        else {
-            this.createView();
-        }
-    };
-    return TrackView;
-}(pubsub_1.default));
-exports.default = TrackView;
-
-
-/***/ }),
-
-/***/ 103:
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var PubSub = /** @class */ (function () {
-    function PubSub() {
-        this.subscribers = {};
-    }
-    // eslint-disable-next-line fsd/hof-name-prefix
-    PubSub.prototype.subscribe = function (eventName, callback) {
-        var _this = this;
-        if (!eventName || !callback) {
-            return undefined;
-        }
-        if (!this.subscribers[eventName]) {
-            this.subscribers[eventName] = [];
-        }
-        var index = this.subscribers[eventName].push(callback) - 1;
-        var additionalUnsubscribe = function () {
-            return _this.subscribers[eventName].splice(index, 1);
-        };
-        return additionalUnsubscribe;
-    };
-    PubSub.prototype.unsubscribe = function (eventName) {
-        if (eventName && this.subscribers[eventName]) {
-            delete this.subscribers[eventName];
-        }
-    };
-    PubSub.prototype.publish = function (eventName, data) {
-        if (!eventName || !this.subscribers[eventName]) {
-            return;
-        }
-        this.subscribers[eventName].forEach(function (callback) { return callback(data); });
-    };
-    return PubSub;
-}());
-exports.default = PubSub;
-
-
-/***/ }),
-
-/***/ 7789:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.defaultProps = exports.getNearest = exports.getNearestIndex = exports.getPosition = exports.getHandleCenterPosition = exports.calcOffset = exports.ensureValueInRange = exports.getMousePosition = exports.getPrecision = exports.getClosestPoint = exports.ensureValuePrecision = exports.prepareValues = exports.getCount = exports.getSliderStart = exports.getSliderLength = exports.calcValue = exports.calcValueByPos = exports.checkNeighbors = exports.ensureValueCorrectNeighbors = exports.calcValueWithEnsure = exports.setFunctionGetBoundingClientRectHTMLElement = exports.prepareData = exports.uniqId = exports.objectToString = void 0;
-var get_1 = __importDefault(__webpack_require__(7361));
-var orderBy_1 = __importDefault(__webpack_require__(5472));
-var merge_1 = __importDefault(__webpack_require__(3857));
-var uniq_1 = __importDefault(__webpack_require__(4908));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var defaultProps = {
+const defaultProps = {
     prefixCls: 'fsd-slider',
     values: [0],
     min: 0,
@@ -18985,29 +17483,24 @@ var defaultProps = {
     precision: 0,
     mark: { values: [] },
 };
-exports.defaultProps = defaultProps;
 function objectToString(style) {
     if (!style) {
         return '';
     }
-    var lines = Object.keys(style).map(function (property) { return property + ": " + style[property] + ";"; });
+    const lines = Object.keys(style).map((property) => `${property}: ${style[property]};`);
     return lines.join('');
 }
-exports.objectToString = objectToString;
 function calcOffset(value, min, max, precision) {
-    var ratio = (value - min) / (max - min);
+    const ratio = (value - min) / (max - min);
     return Number(Math.max(0, ratio * 100).toFixed(precision));
 }
-exports.calcOffset = calcOffset;
 function getHandleCenterPosition(vertical, handle) {
-    var coords = handle.getBoundingClientRect();
+    const coords = handle.getBoundingClientRect();
     return vertical
         ? coords.top + coords.height * 0.5
         : window.pageXOffset + coords.left + coords.width * 0.5;
 }
-exports.getHandleCenterPosition = getHandleCenterPosition;
-function ensureValueInRange(value, _a) {
-    var max = _a.max, min = _a.min;
+function ensureValueInRange(value, { max, min }) {
     if (value <= min) {
         return min;
     }
@@ -19016,103 +17509,88 @@ function ensureValueInRange(value, _a) {
     }
     return value;
 }
-exports.ensureValueInRange = ensureValueInRange;
 function getMousePosition(vertical, event) {
-    var _a = event || {}, _b = _a.clientY, clientY = _b === void 0 ? 0 : _b, _c = _a.pageX, pageX = _c === void 0 ? 0 : _c;
+    const { clientY = 0, pageX = 0 } = event || {};
     return vertical ? clientY : pageX;
 }
-exports.getMousePosition = getMousePosition;
 function getPrecision(step) {
-    var stepString = step.toString();
-    var precision = 0;
+    const stepString = step.toString();
+    let precision = 0;
     if (stepString.indexOf('.') >= 0) {
         precision = stepString.length - 1 - stepString.indexOf('.');
     }
     return precision;
 }
-exports.getPrecision = getPrecision;
-function getClosestPoint(value, _a, props) {
-    var _b;
-    var step = _a.step, min = _a.min, max = _a.max;
+function getClosestPoint(value, { step, min, max }, props) {
+    var _a;
     if (step) {
-        var points = __spreadArrays((((_b = props === null || props === void 0 ? void 0 : props.mark) === null || _b === void 0 ? void 0 : _b.values) || []));
-        var baseNum = Math.pow(10, getPrecision(step));
-        var maxSteps = Math.floor((max * baseNum - min * baseNum) / (step * baseNum));
-        var steps = Math.min((value - min) / step, maxSteps);
-        var closestStep = Math.round(steps) * step + min;
+        let points = [...(((_a = props === null || props === void 0 ? void 0 : props.mark) === null || _a === void 0 ? void 0 : _a.values) || [])];
+        const baseNum = 10 ** getPrecision(step);
+        const maxSteps = Math.floor((max * baseNum - min * baseNum) / (step * baseNum));
+        const steps = Math.min((value - min) / step, maxSteps);
+        const closestStep = Math.round(steps) * step + min;
         points.push(closestStep);
-        points = uniq_1.default(points);
-        var diffs = points.map(function (point) { return Math.abs(value - point); });
-        return points[diffs.indexOf(Math.min.apply(Math, diffs))];
+        points = uniq_default()(points);
+        const diffs = points.map((point) => Math.abs(value - point));
+        return points[diffs.indexOf(Math.min(...diffs))];
     }
     return value;
 }
-exports.getClosestPoint = getClosestPoint;
 function ensureValuePrecision(value, props) {
-    var step = props.step, min = props.min, max = props.max;
-    var closestPoint = Number.isFinite(getClosestPoint(value, { step: step, min: min, max: max }, props))
-        ? getClosestPoint(value, { step: step, min: min, max: max }, props)
+    const { step, min, max } = props;
+    const closestPoint = Number.isFinite(getClosestPoint(value, { step, min, max }, props))
+        ? getClosestPoint(value, { step, min, max }, props)
         : 0;
-    return isUndefined_1.default(step)
+    return isUndefined_default()(step)
         ? closestPoint
         : parseFloat(closestPoint.toFixed(getPrecision(step)));
 }
-exports.ensureValuePrecision = ensureValuePrecision;
 function checkNeighbors(value) {
     return value.length > 1;
 }
-exports.checkNeighbors = checkNeighbors;
 function ensureValueCorrectNeighbors(options) {
-    var props = options.props, index = options.index;
-    var indent = props.indent, values = props.values;
-    var min = props.min, max = props.max;
-    var value = options.value;
+    const { props, index } = options;
+    const { indent, values } = props;
+    let { min, max } = props;
+    const { value } = options;
     if (checkNeighbors(values)) {
-        var prevValue = get_1.default(values, [index - 1]);
-        var nextValue = get_1.default(values, [index + 1]);
-        if (!isUndefined_1.default(prevValue)) {
+        const prevValue = get_default()(values, [index - 1]);
+        const nextValue = get_default()(values, [index + 1]);
+        if (!isUndefined_default()(prevValue)) {
             min = indent ? prevValue + indent : prevValue;
         }
-        if (!isUndefined_1.default(nextValue)) {
+        if (!isUndefined_default()(nextValue)) {
             max = indent ? nextValue - indent : nextValue;
         }
     }
     return ensureValueInRange(value, {
-        min: min,
-        max: max,
+        min,
+        max,
     });
 }
-exports.ensureValueCorrectNeighbors = ensureValueCorrectNeighbors;
 function calcValueWithEnsure(options) {
-    var props = options.props;
-    var value = options.value;
+    const { props } = options;
+    let { value } = options;
     value = ensureValuePrecision(value, props);
-    value = ensureValueCorrectNeighbors(__assign(__assign({}, options), { value: value }));
+    value = ensureValueCorrectNeighbors(Object.assign(Object.assign({}, options), { value }));
     return value;
 }
-exports.calcValueWithEnsure = calcValueWithEnsure;
 function prepareValues(props) {
-    var values = props.values;
-    var mark = props.mark;
-    values = orderBy_1.default(values).map(function (value, index) {
-        return calcValueWithEnsure({ value: value, props: props, index: index });
-    });
-    var markValues = ((mark === null || mark === void 0 ? void 0 : mark.values) || []).map(function (value) {
-        return ensureValueInRange(value, { min: props.min, max: props.max });
-    });
-    markValues = orderBy_1.default(uniq_1.default(markValues), [], ['asc']);
-    return __assign(__assign({}, props), { values: values, mark: __assign(__assign({}, mark), { values: markValues }) });
+    let { values } = props;
+    const { mark } = props;
+    values = orderBy_default()(values).map((value, index) => calcValueWithEnsure({ value, props, index }));
+    let markValues = ((mark === null || mark === void 0 ? void 0 : mark.values) || []).map((value) => ensureValueInRange(value, { min: props.min, max: props.max }));
+    markValues = orderBy_default()(uniq_default()(markValues), [], ['asc']);
+    return Object.assign(Object.assign({}, props), { values, mark: Object.assign(Object.assign({}, mark), { values: markValues }) });
 }
-exports.prepareValues = prepareValues;
 function getCount(props) {
-    return get_1.default(props, ['values'], []).length;
+    return get_default()(props, ['values'], []).length;
 }
-exports.getCount = getCount;
 function getSliderStart(options) {
-    var props = options.props, view = options.view;
+    const { props, view } = options;
     if (props && view) {
-        var vertical = props.vertical, reverse = props.reverse;
-        var rect = view.get(0).getBoundingClientRect();
+        const { vertical, reverse } = props;
+        const rect = view.get(0).getBoundingClientRect();
         if (vertical) {
             return reverse ? rect.bottom : rect.top;
         }
@@ -19120,42 +17598,38 @@ function getSliderStart(options) {
     }
     return 0;
 }
-exports.getSliderStart = getSliderStart;
 function getSliderLength(options) {
-    var props = options.props, view = options.view;
+    const { props, view } = options;
     if (props && view) {
-        var vertical = props.vertical;
-        var coords = view.get(0).getBoundingClientRect();
+        const { vertical } = props;
+        const coords = view.get(0).getBoundingClientRect();
         return vertical ? coords.height : coords.width;
     }
     return 0;
 }
-exports.getSliderLength = getSliderLength;
 function calcValue(options) {
-    var offset = options.offset, length = options.length, props = options.props;
-    var vertical = props.vertical, min = props.min, max = props.max, precision = props.precision;
-    var ratio = Math.abs(Math.max(offset, 0) / length);
-    var value = vertical
+    const { offset, length, props } = options;
+    const { vertical, min, max, precision } = props;
+    const ratio = Math.abs(Math.max(offset, 0) / length);
+    const value = vertical
         ? (1 - ratio) * (max - min) + min
         : ratio * (max - min) + min;
     return Number(value.toFixed(precision));
 }
-exports.calcValue = calcValue;
 function calcValueByPos(options) {
-    var position = options.position, props = options.props, start = options.start;
-    var reverse = props.reverse, min = props.min, max = props.max;
-    var sign = reverse ? -1 : +1;
-    var offset = sign * (position - start);
-    var value = ensureValueInRange(calcValue(__assign(__assign({}, options), { offset: offset })), {
-        min: min,
-        max: max,
+    const { position, props, start } = options;
+    const { reverse, min, max } = props;
+    const sign = reverse ? -1 : +1;
+    const offset = sign * (position - start);
+    let value = ensureValueInRange(calcValue(Object.assign(Object.assign({}, options), { offset })), {
+        min,
+        max,
     });
-    value = calcValueWithEnsure(__assign(__assign({}, options), { value: value }));
+    value = calcValueWithEnsure(Object.assign(Object.assign({}, options), { value }));
     return value;
 }
-exports.calcValueByPos = calcValueByPos;
 function setFunctionGetBoundingClientRectHTMLElement(style) {
-    var defaultStyle = {
+    const defaultStyle = {
         width: 0,
         height: 0,
         marginTop: 0,
@@ -19163,47 +17637,41 @@ function setFunctionGetBoundingClientRectHTMLElement(style) {
         marginLeft: 0,
         marginRight: 0,
     };
-    var _a = __assign(__assign({}, defaultStyle), style), width = _a.width, height = _a.height, marginTop = _a.marginTop, marginLeft = _a.marginLeft, marginBottom = _a.marginBottom, marginRight = _a.marginRight;
+    const { width, height, marginTop, marginLeft, marginBottom, marginRight } = Object.assign(Object.assign({}, defaultStyle), style);
     window.HTMLElement.prototype.getBoundingClientRect = function getBoundingClientRect() {
-        var domRect = {
+        const domRect = {
             width: parseFloat(this.style.width) || width || 0,
             height: parseFloat(this.style.height) || height || 0,
             top: parseFloat(this.style.marginTop) || marginTop || 0,
             left: parseFloat(this.style.marginLeft) || marginLeft || 0,
             x: 0,
             y: 0,
-            toJSON: function () { },
+            toJSON: () => { },
             bottom: parseFloat(this.style.marginBottom) || marginBottom || 0,
             right: parseFloat(this.style.marginRight) || marginRight || 0,
         };
         return domRect;
     };
 }
-exports.setFunctionGetBoundingClientRectHTMLElement = setFunctionGetBoundingClientRectHTMLElement;
 function prepareData(props, prevProps) {
     var _a, _b, _c;
-    var values = (props === null || props === void 0 ? void 0 : props.values) || (prevProps === null || prevProps === void 0 ? void 0 : prevProps.values) || defaultProps.values;
-    var markValues = ((_a = props === null || props === void 0 ? void 0 : props.mark) === null || _a === void 0 ? void 0 : _a.values) || ((_b = prevProps === null || prevProps === void 0 ? void 0 : prevProps.mark) === null || _b === void 0 ? void 0 : _b.values) || ((_c = defaultProps === null || defaultProps === void 0 ? void 0 : defaultProps.mark) === null || _c === void 0 ? void 0 : _c.values);
-    var mergeProps = merge_1.default({}, defaultProps, prevProps, props);
-    return prepareValues(__assign(__assign({}, mergeProps), { values: values, mark: __assign(__assign({}, mergeProps === null || mergeProps === void 0 ? void 0 : mergeProps.mark), { values: markValues }) }));
+    const values = (props === null || props === void 0 ? void 0 : props.values) || (prevProps === null || prevProps === void 0 ? void 0 : prevProps.values) || defaultProps.values;
+    const markValues = ((_a = props === null || props === void 0 ? void 0 : props.mark) === null || _a === void 0 ? void 0 : _a.values) || ((_b = prevProps === null || prevProps === void 0 ? void 0 : prevProps.mark) === null || _b === void 0 ? void 0 : _b.values) || ((_c = defaultProps === null || defaultProps === void 0 ? void 0 : defaultProps.mark) === null || _c === void 0 ? void 0 : _c.values);
+    const mergeProps = merge_default()({}, defaultProps, prevProps, props);
+    return prepareValues(Object.assign(Object.assign({}, mergeProps), { values, mark: Object.assign(Object.assign({}, mergeProps === null || mergeProps === void 0 ? void 0 : mergeProps.mark), { values: markValues }) }));
 }
-exports.prepareData = prepareData;
 function uniqId() {
     return Math.random().toString(16).substr(2);
 }
-exports.uniqId = uniqId;
-function getPosition(_a) {
-    var _b = _a.vertical, vertical = _b === void 0 ? false : _b, _c = _a.coordinateX, coordinateX = _c === void 0 ? 0 : _c, _d = _a.coordinateY, coordinateY = _d === void 0 ? 0 : _d;
+function getPosition({ vertical = false, coordinateX = 0, coordinateY = 0, }) {
     return vertical ? coordinateY : coordinateX;
 }
-exports.getPosition = getPosition;
-function getNearest(_a) {
-    var value = _a.value, values = _a.values;
-    var readyIndex = 0;
-    var readyValue = values[0];
-    var readyDifferent = Number.MAX_SAFE_INTEGER;
-    values.forEach(function (item, index) {
-        var different = Math.abs(value - item);
+function getNearest({ value, values, }) {
+    let readyIndex = 0;
+    let readyValue = values[0];
+    let readyDifferent = Number.MAX_SAFE_INTEGER;
+    values.forEach((item, index) => {
+        const different = Math.abs(value - item);
         if (readyDifferent > different) {
             readyDifferent = different;
             readyIndex = index;
@@ -19212,196 +17680,108 @@ function getNearest(_a) {
     });
     return { index: readyIndex, value: readyValue };
 }
-exports.getNearest = getNearest;
 function getNearestIndex(options) {
-    var coordinateX = options.coordinateX, coordinateY = options.coordinateY, props = options.props, start = options.start;
-    var reverse = props.reverse, min = props.min, max = props.max, values = props.values, vertical = props.vertical;
-    var position = getPosition({ vertical: vertical, coordinateX: coordinateX, coordinateY: coordinateY });
-    var sign = reverse ? -1 : +1;
-    var offset = sign * (position - start);
-    var value = ensureValueInRange(calcValue(__assign(__assign({}, options), { offset: offset })), {
-        min: min,
-        max: max,
+    const { coordinateX, coordinateY, props, start } = options;
+    const { reverse, min, max, values, vertical } = props;
+    const position = getPosition({ vertical, coordinateX, coordinateY });
+    const sign = reverse ? -1 : +1;
+    const offset = sign * (position - start);
+    const value = ensureValueInRange(calcValue(Object.assign(Object.assign({}, options), { offset })), {
+        min,
+        max,
     });
-    var index = getNearest({ value: value, values: values }).index;
+    const { index } = getNearest({ value, values });
     return index;
 }
-exports.getNearestIndex = getNearestIndex;
 
 
-/***/ }),
-
-/***/ 3607:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var index_1 = __webpack_require__(8296);
-__webpack_require__(7254);
-(function handleWindowLoaded($) {
-    // eslint-disable-next-line no-param-reassign
-    console.log('JQuery $ : ', $);
-    console.log('$.fn1 : ', $.fn);
-    $.fn.slider = function makeCreateSlider(props) {
-        console.log('makeCreateSlider this : ', this);
-        return index_1.createSlider(this, props);
-    };
-    console.log('$.fn2 : ', $.fn);
-})(jquery_1.default);
-console.log('JQuery : ', jquery_1.default);
-console.log('createSlider : ', index_1.createSlider);
-exports.default = index_1.Slider;
-
-
-/***/ }),
-
-/***/ 8296:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.createSlider = exports.Slider = void 0;
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var pick_1 = __importDefault(__webpack_require__(8718));
-var utils_1 = __webpack_require__(7789);
-var model_1 = __importDefault(__webpack_require__(6414));
-var view_1 = __importDefault(__webpack_require__(8677));
-var presenter_1 = __importDefault(__webpack_require__(7399));
-var Slider = /** @class */ (function () {
-    function Slider(element, props) {
-        this.model = new model_1.default(utils_1.prepareData(props));
-        this.view = new view_1.default();
-        this.presenter = new presenter_1.default(this.model, this.view);
-        this.view.render(element);
+;// CONCATENATED MODULE: ./src/helpers/pubsub.ts
+class PubSub {
+    constructor() {
+        this.subscribers = {};
     }
-    Slider.prototype.getProps = function () {
-        var defaultProps = this.presenter.getProps();
-        return defaultProps;
-    };
-    Slider.prototype.setProps = function (props) {
-        this.presenter.setProps(props);
-    };
-    Slider.prototype.pickProps = function (keys) {
-        return pick_1.default(this.presenter.getProps(), keys);
-    };
-    Slider.PLUGIN_NAME = 'slider';
-    return Slider;
-}());
-exports.Slider = Slider;
-function createSlider($element, props) {
-    return $element.each(function each() {
-        var $this = jquery_1.default(this);
-        if (!$this.data(Slider.PLUGIN_NAME)) {
-            $this.data(Slider.PLUGIN_NAME, new Slider($this, props));
+    // eslint-disable-next-line fsd/hof-name-prefix
+    subscribe(eventName, callback) {
+        if (!eventName || !callback) {
+            return undefined;
         }
-        else if ($this.data(Slider.PLUGIN_NAME)) {
-            var slider = $this.data(Slider.PLUGIN_NAME);
-            if (slider) {
-                slider.setProps(props);
-            }
+        if (!this.subscribers[eventName]) {
+            this.subscribers[eventName] = [];
         }
-    });
+        const index = this.subscribers[eventName].push(callback) - 1;
+        const additionalUnsubscribe = () => this.subscribers[eventName].splice(index, 1);
+        return additionalUnsubscribe;
+    }
+    unsubscribe(eventName) {
+        if (eventName && this.subscribers[eventName]) {
+            delete this.subscribers[eventName];
+        }
+    }
+    publish(eventName, data) {
+        if (!eventName || !this.subscribers[eventName]) {
+            return;
+        }
+        this.subscribers[eventName].forEach((callback) => callback(data));
+    }
 }
-exports.createSlider = createSlider;
+/* harmony default export */ const pubsub = (PubSub);
+
+;// CONCATENATED MODULE: ./src/slider/model.ts
 
 
-/***/ }),
 
-/***/ 6414:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var isUndefined_1 = __importDefault(__webpack_require__(2353));
-var merge_1 = __importDefault(__webpack_require__(3857));
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var utils_1 = __webpack_require__(7789);
-var Model = /** @class */ (function (_super) {
-    __extends(Model, _super);
-    function Model(props) {
-        var _this = _super.call(this) || this;
-        _this.props = props;
-        return _this;
+class Model extends pubsub {
+    constructor(props) {
+        super();
+        this.props = props;
     }
-    Model.prototype.getProps = function () {
+    getProps() {
         return this.props;
-    };
-    Model.prototype.setProps = function (props) {
-        this.props = utils_1.prepareData(props, this.getProps());
+    }
+    setProps(props) {
+        this.props = prepareData(props, this.getProps());
         this.publish('setPropsForView', this.props);
-    };
-    Model.prototype.onChange = function (options) {
+    }
+    onChange(options) {
         var _a, _b, _c;
-        var _d = this.props, disabled = _d.disabled, vertical = _d.vertical;
+        const { disabled, vertical } = this.props;
         if (disabled) {
             return;
         }
-        var coordinateX = options.coordinateX, coordinateY = options.coordinateY, start = options.start, length = options.length, _e = options.action, action = _e === void 0 ? 'onChange' : _e;
-        var index = this.props.index;
-        var readyIndex = index;
-        if (isUndefined_1.default(readyIndex) || readyIndex < 0) {
-            readyIndex = utils_1.getNearestIndex({
-                coordinateX: coordinateX,
-                coordinateY: coordinateY,
-                start: start,
-                length: length,
+        const { coordinateX, coordinateY, start, length, action = 'onChange', } = options;
+        const { index } = this.props;
+        let readyIndex = index;
+        if (isUndefined_default()(readyIndex) || readyIndex < 0) {
+            readyIndex = getNearestIndex({
+                coordinateX,
+                coordinateY,
+                start,
+                length,
                 props: this.props,
             });
             this.setIndex({ index: readyIndex });
         }
-        var position = utils_1.getPosition({
-            vertical: vertical,
-            coordinateX: coordinateX,
-            coordinateY: coordinateY,
+        const position = getPosition({
+            vertical,
+            coordinateX,
+            coordinateY,
         });
-        var previousValues = this.props.values;
-        var previousValue = previousValues[readyIndex];
-        var nextValue = utils_1.calcValueByPos({
-            position: position,
-            start: start,
-            length: length,
+        const { values: previousValues } = this.props;
+        const previousValue = previousValues[readyIndex];
+        const nextValue = calcValueByPos({
+            position,
+            start,
+            length,
             props: this.props,
             index: readyIndex,
         });
         if (previousValue !== nextValue) {
-            var nextValues = __spreadArrays(previousValues);
+            const nextValues = [...previousValues];
             nextValues[readyIndex] = nextValue;
-            this.setProps(merge_1.default({}, this.props, { values: nextValues }));
+            this.setProps(merge_default()({}, this.props, { values: nextValues }));
             if (this.props && action in this.props) {
-                var onAction = void 0;
+                let onAction;
                 if (action === 'onChange') {
                     onAction = (_a = this.props) === null || _a === void 0 ? void 0 : _a[action];
                 }
@@ -19416,227 +17796,81 @@ var Model = /** @class */ (function (_super) {
                 }
             }
         }
-    };
-    Model.prototype.onBeforeChange = function (_a) {
-        var _b;
-        var index = _a.index;
-        var disabled = this.props.disabled;
+    }
+    onBeforeChange({ index }) {
+        var _a;
+        const { disabled } = this.props;
         if (disabled) {
             return;
         }
-        this.setIndex({ index: index });
-        var values = this.props.values;
-        var onBeforeChange = (_b = this.props) === null || _b === void 0 ? void 0 : _b.onBeforeChange;
+        this.setIndex({ index });
+        const { values } = this.props;
+        const onBeforeChange = (_a = this.props) === null || _a === void 0 ? void 0 : _a.onBeforeChange;
         if (values && onBeforeChange) {
             onBeforeChange(values);
         }
-    };
-    Model.prototype.onAfterChange = function () {
+    }
+    onAfterChange() {
         var _a;
-        var disabled = this.props.disabled;
+        const { disabled } = this.props;
         if (disabled) {
             return;
         }
         this.setProps();
-        var values = this.props.values;
+        const { values } = this.props;
         // eslint-disable-next-line prettier/prettier
-        var onAfterChange = (_a = this.props) === null || _a === void 0 ? void 0 : _a.onAfterChange;
+        const onAfterChange = (_a = this.props) === null || _a === void 0 ? void 0 : _a.onAfterChange;
         if (values && onAfterChange) {
             onAfterChange(values);
         }
-    };
-    Model.prototype.setIndex = function (_a) {
-        var index = _a.index;
-        var _b = this.props, previousIndex = _b.index, disabled = _b.disabled;
+    }
+    setIndex({ index }) {
+        const { index: previousIndex, disabled } = this.props;
         if (disabled) {
             return;
         }
         if (previousIndex !== index) {
-            var props = merge_1.default({}, this.props, { index: index });
+            const props = merge_default()({}, this.props, { index });
             this.setProps(props);
         }
-    };
-    return Model;
-}(pubsub_1.default));
-exports.default = Model;
+    }
+}
+/* harmony default export */ const model = (Model);
 
-
-/***/ }),
-
-/***/ 7399:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+// EXTERNAL MODULE: ./node_modules/bind-decorator/index.js
+var bind_decorator = __webpack_require__(7056);
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__(4184);
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+;// CONCATENATED MODULE: ./src/components/rail/view.ts
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var Presenter = /** @class */ (function () {
-    function Presenter(model, view) {
-        this.model = model;
-        this.view = view;
-        this.view.setProps(this.model.getProps());
-        this.initHandlesView();
-        this.initHandlesModel();
+
+
+
+
+
+
+class RailView extends pubsub {
+    constructor(addition) {
+        super();
+        this.isRendered = false;
+        this.addition = addition;
     }
-    Presenter.prototype.getProps = function () {
-        return this.model.getProps();
-    };
-    Presenter.prototype.setProps = function (props) {
-        this.model.setProps(props);
-    };
-    Presenter.prototype.initHandlesView = function () {
-        this.view.subscribe('onBeforeChange', this.onBeforeChange);
-        this.view.subscribe('onAfterChange', this.onAfterChange);
-        this.view.subscribe('onChange', this.onChange);
-        this.view.subscribe('setIndex', this.setIndex);
-    };
-    Presenter.prototype.initHandlesModel = function () {
-        this.model.subscribe('setPropsForView', this.setPropsForView);
-    };
-    Presenter.prototype.onChange = function (options) {
-        this.model.onChange(options);
-    };
-    Presenter.prototype.onAfterChange = function () {
-        this.model.onAfterChange();
-    };
-    Presenter.prototype.onBeforeChange = function (options) {
-        this.model.onBeforeChange(options);
-    };
-    Presenter.prototype.setPropsForView = function (props) {
-        this.view.setProps(props);
-    };
-    Presenter.prototype.setIndex = function (options) {
-        this.model.setIndex(options);
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], Presenter.prototype, "onChange", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", void 0)
-    ], Presenter.prototype, "onAfterChange", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], Presenter.prototype, "onBeforeChange", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], Presenter.prototype, "setPropsForView", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], Presenter.prototype, "setIndex", null);
-    return Presenter;
-}());
-exports.default = Presenter;
-
-
-/***/ }),
-
-/***/ 8677:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var jquery_1 = __importDefault(__webpack_require__(9755));
-var bind_decorator_1 = __importDefault(__webpack_require__(7056));
-var classnames_1 = __importDefault(__webpack_require__(4184));
-var get_1 = __importDefault(__webpack_require__(7361));
-var utils_1 = __webpack_require__(7789);
-var pubsub_1 = __importDefault(__webpack_require__(103));
-var view_1 = __importDefault(__webpack_require__(546));
-var view_2 = __importDefault(__webpack_require__(1723));
-var view_3 = __importDefault(__webpack_require__(9590));
-var view_4 = __importDefault(__webpack_require__(5597));
-var view_5 = __importDefault(__webpack_require__(1697));
-var View = /** @class */ (function (_super) {
-    __extends(View, _super);
-    function View() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.rails = [];
-        _this.tracks = [];
-        _this.handles = [];
-        _this.dots = [];
-        _this.marks = [];
-        _this.isRendered = false;
-        return _this;
-    }
-    View.prototype.setProps = function (props) {
+    setProps(props) {
         this.props = props;
         this.updateView();
-        this.createOrUpdateSubViews();
-        this.appendSubViews();
+        this.initHandles();
         this.render();
-    };
-    View.prototype.render = function (parent) {
+    }
+    render(parent) {
         if (parent) {
             this.parent = parent;
         }
@@ -19646,146 +17880,1308 @@ var View = /** @class */ (function (_super) {
                 this.isRendered = true;
             }
         }
-    };
-    View.prototype.remove = function () {
+    }
+    remove() {
         if (this.view) {
             this.view.remove();
             this.view = undefined;
             this.isRendered = false;
         }
-    };
-    View.cleanSubView = function (views, count) {
-        var length = views.length;
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    createView() {
+        var _a, _b;
+        if (this.props) {
+            const on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.rail) === null || _b === void 0 ? void 0 : _b.on;
+            if (on) {
+                this.view = jquery_default()('<div/>', this.prepareAttr());
+            }
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const className = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.rail) === null || _b === void 0 ? void 0 : _b.className) || '';
+        return classnames_default()(`${prefixCls}__rail`, className);
+    }
+    prepareStyle() {
+        var _a, _b;
+        const style = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.rail) === null || _b === void 0 ? void 0 : _b.style) || {};
+        return objectToString(Object.assign({}, style));
+    }
+    updateView() {
+        if (this.view) {
+            if (get_default()(this.props, ['rail', 'on'])) {
+                this.view.attr(this.prepareAttr());
+            }
+            else {
+                this.remove();
+            }
+        }
+        else {
+            this.createView();
+        }
+    }
+    handleViewClick(event) {
+        if (this.view && this.props) {
+            const { handles, index = 0 } = this.addition;
+            const handleViewClick = get_default()(handles, ['handleViewClick']);
+            if (handleViewClick) {
+                handleViewClick(index, event);
+            }
+        }
+    }
+    initHandles() {
+        if (this.view) {
+            this.view.off('click', this.handleViewClick);
+            this.view.on('click', this.handleViewClick);
+        }
+    }
+}
+__decorate([
+    bind_decorator/* default */.ZP,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], RailView.prototype, "handleViewClick", null);
+
+;// CONCATENATED MODULE: ./src/components/tooltip/view.ts
+
+
+
+
+
+
+class TooltipView extends pubsub {
+    constructor(addition) {
+        super();
+        this.isRendered = false;
+        this.addition = addition;
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.prepareContent();
+        this.render();
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.isRendered = false;
+        }
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    createView() {
+        if (this.props && !isUndefined_default()(get_default()(this.addition, ['value']))) {
+            this.view = jquery_default()('<div/>', this.prepareAttr());
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b, _c, _d;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const className = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.className) || '';
+        const always = (_d = (_c = this.props) === null || _c === void 0 ? void 0 : _c.tooltip) === null || _d === void 0 ? void 0 : _d.always;
+        return classnames_default()(`${prefixCls}__tooltip`, className, {
+            [`${prefixCls}__tooltip_always`]: always,
+        });
+    }
+    prepareStyle() {
+        var _a, _b;
+        let readyStyle;
+        if (this.props) {
+            const style = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.style) || {};
+            const positionStyle = {};
+            readyStyle = objectToString(Object.assign(Object.assign({}, style), positionStyle));
+        }
+        return readyStyle;
+    }
+    prepareContent() {
+        var _a, _b;
+        if (this.view) {
+            const { value } = this.addition;
+            if (!isUndefined_default()(value)) {
+                const render = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.render;
+                let content = `${value}`;
+                if (render) {
+                    content = render(value);
+                }
+                if (content) {
+                    this.view.empty().append(content);
+                }
+            }
+        }
+    }
+    updateView() {
+        if (this.view) {
+            if (get_default()(this.props, ['tooltip', 'on'])) {
+                this.view.attr(this.prepareAttr());
+            }
+            else {
+                this.remove();
+            }
+        }
+        else {
+            this.createView();
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./src/components/handle/view.ts
+var view_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var view_metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+class HandleView extends pubsub {
+    constructor(addition) {
+        super();
+        this.isRendered = false;
+        this.addition = addition;
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.appendTooltip();
+        this.render();
+    }
+    getProps() {
+        return this.props;
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.isRendered = false;
+        }
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    createView() {
+        if (this.props) {
+            this.view = jquery_default()('<div/>', this.prepareAttr());
+            this.initHandles();
+        }
+    }
+    handleViewMouseDown(event) {
+        var _a, _b;
+        const handleViewMouseDown = (_b = (_a = this.addition) === null || _a === void 0 ? void 0 : _a.handles) === null || _b === void 0 ? void 0 : _b.handleViewMouseDown;
+        const index = get_default()(this.addition, ['index']);
+        if (!isUndefined_default()(index) && handleViewMouseDown) {
+            handleViewMouseDown(index, event);
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+            tabindex: -1,
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b, _c;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const index = get_default()(this.addition, ['index']);
+        const className = ((_c = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.handle) === null || _b === void 0 ? void 0 : _b.classNames) === null || _c === void 0 ? void 0 : _c[index]) || '';
+        const active = get_default()(this.addition, ['active']);
+        return classnames_default()(`${prefixCls}__handle`, className, {
+            [`${prefixCls}__handle_active`]: active,
+        });
+    }
+    prepareStyle() {
+        var _a, _b, _c;
+        let readyStyle;
+        if (this.props) {
+            const index = get_default()(this.addition, ['index']);
+            const style = ((_c = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.handle) === null || _b === void 0 ? void 0 : _b.styles) === null || _c === void 0 ? void 0 : _c[index]) || {};
+            const { values, min, max, vertical, reverse } = this.props;
+            const value = values[index];
+            const offset = calcOffset(value, min, max);
+            const positionStyle = vertical
+                ? {
+                    [reverse ? 'top' : 'bottom']: `${offset}%`,
+                    [reverse ? 'bottom' : 'top']: 'auto',
+                    transform: reverse ? 'none' : `translateY(+50%)`,
+                }
+                : {
+                    [reverse ? 'right' : 'left']: `${offset}%`,
+                    [reverse ? 'left' : 'right']: 'auto',
+                    transform: `translateX(${reverse ? '+' : '-'}50%)`,
+                };
+            readyStyle = objectToString(Object.assign(Object.assign(Object.assign({}, style), positionStyle), { 'z-index': `${index + 10}` }));
+        }
+        return readyStyle;
+    }
+    isProps() {
+        return !!(this.view && this.props);
+    }
+    appendTooltip() {
+        var _a, _b;
+        const on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.on;
+        if (on && this.isProps()) {
+            const index = get_default()(this.addition, ['index']);
+            const value = get_default()(this.props, ['values', index]);
+            if (!isUndefined_default()(value)) {
+                if (this.tooltip) {
+                    this.tooltip.setAddition({ value, index });
+                    if (this.props) {
+                        this.tooltip.setProps(this.props);
+                    }
+                }
+                else {
+                    this.tooltip = new TooltipView({ value, index });
+                    if (this.props) {
+                        this.tooltip.setProps(this.props);
+                    }
+                    this.tooltip.render(this.view);
+                }
+            }
+        }
+        else if (this.tooltip && this.view) {
+            this.tooltip.remove();
+            this.tooltip = undefined;
+            this.view.empty();
+        }
+    }
+    updateView() {
+        if (this.view) {
+            this.view.attr(this.prepareAttr());
+        }
+        else {
+            this.createView();
+        }
+    }
+    initHandles() {
+        if (this.view) {
+            this.view.off({
+                mousedown: this.handleViewMouseDown,
+            });
+            this.view.on({
+                mousedown: this.handleViewMouseDown,
+            });
+        }
+    }
+}
+view_decorate([
+    bind_decorator/* default */.ZP,
+    view_metadata("design:type", Function),
+    view_metadata("design:paramtypes", [Object]),
+    view_metadata("design:returntype", void 0)
+], HandleView.prototype, "handleViewMouseDown", null);
+
+;// CONCATENATED MODULE: ./src/components/track/view.ts
+
+
+
+
+
+
+class TrackView extends pubsub {
+    constructor(addition) {
+        super();
+        this.isRendered = false;
+        this.addition = addition;
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.render();
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.isRendered = false;
+        }
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    createView() {
+        var _a, _b;
+        if (this.props && !isUndefined_default()(get_default()(this.addition, ['index']))) {
+            const on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.track) === null || _b === void 0 ? void 0 : _b.on;
+            if (on) {
+                this.view = jquery_default()('<div/>', this.prepareAttr());
+            }
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const index = get_default()(this.addition, ['index']);
+        const className = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.track) === null || _b === void 0 ? void 0 : _b.classNames) || '';
+        return classnames_default()(`${prefixCls}__track`, { [`${prefixCls}__track-${index}`]: true }, className);
+    }
+    prepareStyle() {
+        var _a, _b, _c;
+        let readyStyle;
+        if (this.props) {
+            const index = get_default()(this.addition, ['index']);
+            const style = ((_c = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.track) === null || _b === void 0 ? void 0 : _b.styles) === null || _c === void 0 ? void 0 : _c[index]) || {};
+            const { vertical, min, max } = this.props;
+            let { reverse } = this.props;
+            const { values, startPoint } = this.props;
+            const readyOffset = calcOffset(values[index], min, max);
+            let offset = readyOffset;
+            let length;
+            if (values.length > 1) {
+                length = calcOffset(values[index + 1], min, max) - readyOffset;
+            }
+            else {
+                const trackOffset = startPoint !== undefined ? calcOffset(startPoint, min, max) : 0;
+                offset = trackOffset;
+                length = readyOffset - trackOffset;
+            }
+            if (length < 0) {
+                reverse = !reverse;
+                length = Math.abs(length);
+                offset = 100 - offset;
+            }
+            const positionStyle = vertical
+                ? {
+                    [reverse ? 'top' : 'bottom']: `${offset}%`,
+                    [reverse ? 'bottom' : 'top']: 'auto',
+                    height: `${length}%`,
+                }
+                : {
+                    [reverse ? 'right' : 'left']: `${offset}%`,
+                    [reverse ? 'left' : 'right']: 'auto',
+                    width: `${length}%`,
+                };
+            readyStyle = objectToString(Object.assign(Object.assign({}, positionStyle), style));
+        }
+        return readyStyle;
+    }
+    updateView() {
+        if (this.view) {
+            if (get_default()(this.props, ['track', 'on'])) {
+                this.view.attr(this.prepareAttr());
+            }
+            else {
+                this.remove();
+            }
+        }
+        else {
+            this.createView();
+        }
+    }
+}
+
+// EXTERNAL MODULE: ./node_modules/lodash/isArray.js
+var isArray = __webpack_require__(1469);
+var isArray_default = /*#__PURE__*/__webpack_require__.n(isArray);
+;// CONCATENATED MODULE: ./src/components/dot/view.ts
+var dot_view_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var dot_view_metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+class DotView extends pubsub {
+    constructor(addition) {
+        super();
+        this.isRendered = false;
+        this.addition = addition;
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.render();
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.isRendered = false;
+        }
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    createView() {
+        if (this.props && !isUndefined_default()(get_default()(this.addition, ['value']))) {
+            this.view = jquery_default()('<div/>', this.prepareAttr());
+            this.initHandles();
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const className = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.dot) === null || _b === void 0 ? void 0 : _b.className) || '';
+        const value = get_default()(this.addition, ['value']);
+        let values = get_default()(this.props, ['values']);
+        let active = false;
+        if (!isUndefined_default()(values) && !isUndefined_default()(value)) {
+            if (values.length === 1) {
+                active = value <= values[0];
+            }
+            else if (values.length > 1) {
+                values = orderBy_default()(values);
+                if (value >= values[0] && value <= values[values.length - 1]) {
+                    active = true;
+                }
+            }
+            return classnames_default()(`${prefixCls}__dot`, className, {
+                [`${prefixCls}__dot_active`]: active,
+            });
+        }
+        return '';
+    }
+    prepareStyle() {
+        var _a, _b;
+        let readyStyle;
+        if (this.props) {
+            const value = get_default()(this.addition, ['value'], 0);
+            const style = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.dot) === null || _b === void 0 ? void 0 : _b.style) || {};
+            const { vertical, min, max, reverse } = this.props;
+            const offset = calcOffset(value, min, max);
+            const positionStyle = vertical
+                ? {
+                    [reverse ? 'top' : 'bottom']: `${offset}%`,
+                    [reverse ? 'bottom' : 'top']: 'auto',
+                    transform: reverse ? 'none' : `translateY(+50%)`,
+                }
+                : {
+                    [reverse ? 'right' : 'left']: `${offset}%`,
+                    [reverse ? 'left' : 'right']: 'auto',
+                    transform: `translateX(${reverse ? '+' : '-'}50%)`,
+                };
+            readyStyle = objectToString(Object.assign(Object.assign({}, style), positionStyle));
+            return readyStyle;
+        }
+        return readyStyle;
+    }
+    updateView() {
+        if (this.view) {
+            this.view.attr(this.prepareAttr());
+        }
+        else {
+            this.createView();
+        }
+    }
+    handleViewClick(event) {
+        if (this.view && this.props) {
+            const { value, handles, index = 0 } = this.addition;
+            const handleViewClick = get_default()(handles, ['handleViewClick']);
+            if (!isUndefined_default()(value) && handleViewClick) {
+                handleViewClick(index, event, value);
+            }
+        }
+    }
+    initHandles() {
+        if (this.view) {
+            this.view.off('click', this.handleViewClick);
+            this.view.on('click', this.handleViewClick);
+        }
+    }
+}
+dot_view_decorate([
+    bind_decorator/* default */.ZP,
+    dot_view_metadata("design:type", Function),
+    dot_view_metadata("design:paramtypes", [Object]),
+    dot_view_metadata("design:returntype", void 0)
+], DotView.prototype, "handleViewClick", null);
+/* harmony default export */ const view = (DotView);
+
+;// CONCATENATED MODULE: ./src/components/dots/view.ts
+var dots_view_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var dots_view_metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+class DotsView extends pubsub {
+    constructor(addition) {
+        super();
+        this.dots = [];
+        this.isRendered = false;
+        this.addition = addition;
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.createOrUpdateSubViews();
+        this.appendSubViews();
+        this.render();
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.dots = [];
+            this.isRendered = false;
+        }
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    static cleanSubView(views, count) {
+        const { length } = views;
         if (length > count) {
-            for (var index = count; index < length; index += 1) {
+            for (let index = count; index < length; index += 1) {
                 if (views[index]) {
                     views[index].remove();
                 }
             }
             views.splice(count);
         }
-    };
-    View.prototype.createView = function () {
-        this.view = jquery_1.default('<div/>', this.prepareAttr());
-    };
-    View.prototype.updateView = function () {
+    }
+    createView() {
+        var _a, _b;
+        if (this.props) {
+            const on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.dot) === null || _b === void 0 ? void 0 : _b.on;
+            if (on) {
+                this.view = jquery_default()('<div/>', this.prepareAttr());
+            }
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const className = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.dot) === null || _b === void 0 ? void 0 : _b.wrapClassName;
+        const vertical = get_default()(this.props, ['vertical']);
+        return classnames_default()(`${prefixCls}__dots`, className, {
+            [`${prefixCls}__dots_vertical`]: vertical,
+        });
+    }
+    prepareStyle() {
+        let readyStyle;
+        if (this.props) {
+            readyStyle = '';
+        }
+        return readyStyle;
+    }
+    updateView() {
+        if (this.view) {
+            if (get_default()(this.props, ['dot', 'on'])) {
+                this.view.attr(this.prepareAttr());
+            }
+            else {
+                this.remove();
+            }
+        }
+        else {
+            this.createView();
+        }
+    }
+    createOrUpdateSubViews() {
+        this.dots = this.createOrUpdateSubView(this.dots, view);
+    }
+    createOrUpdateSubView(views, SubView) {
+        var _a, _b, _c, _d;
+        const readyViews = [...views];
+        if (this.props && this.view) {
+            const { min, max, step, reverse } = this.props;
+            let values = [];
+            const on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.dot;
+            if (on) {
+                const markValues = (_d = (_c = this.props) === null || _c === void 0 ? void 0 : _c.mark) === null || _d === void 0 ? void 0 : _d.values;
+                if (isArray_default()(markValues)) {
+                    values = [...markValues];
+                }
+            }
+            if (step) {
+                for (let index = min; index <= max; index += step) {
+                    values.push(index);
+                }
+            }
+            const { handles } = this.addition;
+            values = orderBy_default()(uniq_default()(values), [], reverse ? 'desc' : 'asc');
+            const { length } = values;
+            for (let index = 0; index < length; index += 1) {
+                if (readyViews[index]) {
+                    readyViews[index].setAddition({
+                        index,
+                        handles,
+                        value: values[index],
+                    });
+                    readyViews[index].setProps(this.props);
+                }
+                else {
+                    readyViews[index] = new SubView({
+                        index,
+                        handles,
+                        value: values[index],
+                    });
+                    readyViews[index].setProps(this.props);
+                }
+            }
+            DotsView.cleanSubView(readyViews, values.length);
+        }
+        return readyViews;
+    }
+    appendSubViews() {
+        if (this.view) {
+            // eslint-disable-next-line @typescript-eslint/unbound-method
+            this.dots.forEach(this.appendSubView);
+        }
+    }
+    appendSubView(subView) {
+        if (this.view) {
+            subView.render(this.view);
+        }
+    }
+}
+dots_view_decorate([
+    bind_decorator/* default */.ZP,
+    dots_view_metadata("design:type", Function),
+    dots_view_metadata("design:paramtypes", [Object]),
+    dots_view_metadata("design:returntype", void 0)
+], DotsView.prototype, "appendSubView", null);
+
+;// CONCATENATED MODULE: ./src/components/mark/view.ts
+var mark_view_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var mark_view_metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+class MarkView extends pubsub {
+    constructor(addition) {
+        super();
+        this.isRendered = false;
+        this.addition = addition;
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.initHandles();
+        this.prepareContent();
+        this.render();
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.isRendered = false;
+        }
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    createView() {
+        if (this.props && !isUndefined_default()(get_default()(this.addition, ['value']))) {
+            this.view = jquery_default()('<div/>', this.prepareAttr());
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const className = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.className) || '';
+        return classnames_default()(`${prefixCls}__mark`, className);
+    }
+    prepareStyle() {
+        var _a, _b;
+        let readyStyle;
+        if (this.props) {
+            const value = get_default()(this.addition, ['value'], 0);
+            const style = ((_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.style) || {};
+            const { vertical, min, max, reverse } = this.props;
+            const offset = calcOffset(value, min, max);
+            const positionStyle = vertical
+                ? {
+                    [reverse ? 'top' : 'bottom']: `${offset}%`,
+                    [reverse ? 'bottom' : 'top']: 'auto',
+                    transform: reverse ? 'translateY(-25%)' : `translateY(+50%)`,
+                }
+                : {
+                    [reverse ? 'right' : 'left']: `${offset}%`,
+                    [reverse ? 'left' : 'right']: 'auto',
+                    transform: `translateX(${reverse ? '+' : '-'}50%)`,
+                };
+            readyStyle = objectToString(Object.assign(Object.assign({}, style), positionStyle));
+        }
+        return readyStyle;
+    }
+    prepareContent() {
+        var _a, _b;
+        if (this.view) {
+            const { value } = this.addition;
+            if (!isUndefined_default()(value)) {
+                const render = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.render;
+                let content = `${value}`;
+                if (render) {
+                    content = render(value);
+                }
+                if (content) {
+                    this.view.empty().append(content);
+                }
+            }
+        }
+    }
+    handleViewClick(event) {
+        if (this.view && this.props) {
+            const { value, handles, index = 0 } = this.addition;
+            const handleViewClick = get_default()(handles, ['handleViewClick']);
+            if (!isUndefined_default()(value) && handleViewClick) {
+                handleViewClick(index, event, value);
+            }
+        }
+    }
+    initHandles() {
+        if (this.view) {
+            this.view.off('click', this.handleViewClick);
+            this.view.on('click', this.handleViewClick);
+        }
+    }
+    updateView() {
+        if (this.view) {
+            this.view.attr(this.prepareAttr());
+        }
+        else {
+            this.createView();
+        }
+    }
+}
+mark_view_decorate([
+    bind_decorator/* default */.ZP,
+    mark_view_metadata("design:type", Function),
+    mark_view_metadata("design:paramtypes", [Object]),
+    mark_view_metadata("design:returntype", void 0)
+], MarkView.prototype, "handleViewClick", null);
+/* harmony default export */ const mark_view = (MarkView);
+
+;// CONCATENATED MODULE: ./src/components/marks/view.ts
+var marks_view_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var marks_view_metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+class MarksView extends pubsub {
+    constructor(addition) {
+        super();
+        this.marks = [];
+        this.isRendered = false;
+        this.addition = addition;
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.createOrUpdateSubViews();
+        this.appendSubViews();
+        this.render();
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.marks = [];
+            this.isRendered = false;
+        }
+    }
+    static cleanSubView(views, count) {
+        const { length } = views;
+        if (length > count) {
+            for (let index = count; index < length; index += 1) {
+                if (views[index]) {
+                    views[index].remove();
+                }
+            }
+            views.splice(count);
+        }
+    }
+    getAddition() {
+        return this.addition;
+    }
+    setAddition(addition) {
+        this.addition = addition;
+    }
+    createView() {
+        var _a, _b;
+        if (this.props) {
+            const on = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.on;
+            if (on) {
+                this.view = jquery_default()('<div/>', this.prepareAttr());
+            }
+        }
+    }
+    prepareAttr() {
+        const attr = {
+            class: this.prepareClassName(),
+            style: this.prepareStyle(),
+        };
+        return attr;
+    }
+    prepareClassName() {
+        var _a, _b;
+        const prefixCls = get_default()(this.props, ['prefixCls'], '');
+        const className = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.wrapClassName;
+        return classnames_default()(`${prefixCls}__marks`, className);
+    }
+    prepareStyle() {
+        let readyStyle;
+        if (this.props) {
+            readyStyle = '';
+        }
+        return readyStyle;
+    }
+    updateView() {
+        if (this.view) {
+            if (get_default()(this.props, ['mark', 'on'])) {
+                this.view.attr(this.prepareAttr());
+            }
+            else {
+                this.remove();
+            }
+        }
+        else {
+            this.createView();
+        }
+    }
+    createOrUpdateSubViews() {
+        this.marks = this.createOrUpdateSubView(this.marks, mark_view);
+    }
+    createOrUpdateSubView(views, SubView) {
+        var _a, _b;
+        const readyViews = [...views];
+        if (this.props && this.view) {
+            const { min, max, step, reverse } = this.props;
+            let values = [];
+            const markValues = (_b = (_a = this.props) === null || _a === void 0 ? void 0 : _a.mark) === null || _b === void 0 ? void 0 : _b.values;
+            if (isArray_default()(markValues)) {
+                values = [...markValues];
+            }
+            if (step) {
+                for (let index = min; index <= max; index += step) {
+                    values.push(index);
+                }
+            }
+            values = orderBy_default()(uniq_default()(values), [], reverse ? 'desc' : 'asc');
+            const { length } = values;
+            const { handles } = this.addition;
+            for (let index = 0; index < length; index += 1) {
+                if (!isUndefined_default()(readyViews[index])) {
+                    readyViews[index].setAddition({
+                        index,
+                        handles,
+                        value: values[index],
+                    });
+                    readyViews[index].setProps(this.props);
+                }
+                else {
+                    readyViews[index] = new SubView({
+                        index,
+                        handles,
+                        value: values[index],
+                    });
+                    readyViews[index].setProps(this.props);
+                }
+            }
+            MarksView.cleanSubView(readyViews, values.length);
+        }
+        return readyViews;
+    }
+    appendSubViews() {
+        if (this.view) {
+            this.marks.forEach(this.appendSubView);
+        }
+    }
+    appendSubView(subView) {
+        if (this.view) {
+            subView.render(this.view);
+        }
+    }
+}
+marks_view_decorate([
+    bind_decorator/* default */.ZP,
+    marks_view_metadata("design:type", Function),
+    marks_view_metadata("design:paramtypes", [Object]),
+    marks_view_metadata("design:returntype", void 0)
+], MarksView.prototype, "appendSubView", null);
+
+;// CONCATENATED MODULE: ./src/slider/view.ts
+var slider_view_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var slider_view_metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+class View extends pubsub {
+    constructor() {
+        super(...arguments);
+        this.rails = [];
+        this.tracks = [];
+        this.handles = [];
+        this.dots = [];
+        this.marks = [];
+        this.isRendered = false;
+    }
+    setProps(props) {
+        this.props = props;
+        this.updateView();
+        this.createOrUpdateSubViews();
+        this.appendSubViews();
+        this.render();
+    }
+    render(parent) {
+        if (parent) {
+            this.parent = parent;
+        }
+        if (!this.isRendered) {
+            if (this.parent && this.view) {
+                this.parent.append(this.view);
+                this.isRendered = true;
+            }
+        }
+    }
+    remove() {
+        if (this.view) {
+            this.view.remove();
+            this.view = undefined;
+            this.isRendered = false;
+        }
+    }
+    static cleanSubView(views, count) {
+        const { length } = views;
+        if (length > count) {
+            for (let index = count; index < length; index += 1) {
+                if (views[index]) {
+                    views[index].remove();
+                }
+            }
+            views.splice(count);
+        }
+    }
+    createView() {
+        this.view = jquery_default()('<div/>', this.prepareAttr());
+    }
+    updateView() {
         if (!this.view) {
             this.createView();
         }
         else {
             this.view.attr(this.prepareAttr());
         }
-    };
-    View.prototype.prepareAttr = function () {
+    }
+    prepareAttr() {
         return {
             class: this.prepareClassName(),
             style: this.prepareStyle(),
         };
-    };
-    View.prototype.prepareClassName = function () {
-        var _a;
-        var _b = this.props || {}, _c = _b.prefixCls, prefixCls = _c === void 0 ? '' : _c, mark = _b.mark, disabled = _b.disabled, vertical = _b.vertical, classNames = _b.classNames;
-        return classnames_1.default(prefixCls, (_a = {},
-            _a[prefixCls + "_with-mark"] = mark === null || mark === void 0 ? void 0 : mark.on,
-            _a[prefixCls + "_disabled"] = disabled,
-            _a[prefixCls + "_vertical"] = vertical,
-            _a.classNames = classNames,
-            _a));
-    };
-    View.prototype.prepareStyle = function () {
-        return utils_1.objectToString(__assign({}, get_1.default(this.props, ['style'])));
-    };
-    View.prototype.handleWindowMouseUpForHandleFocusout = function (event) {
-        var target = event.target;
+    }
+    prepareClassName() {
+        const { prefixCls = '', mark, disabled, vertical, classNames } = this.props || {};
+        return classnames_default()(prefixCls, {
+            [`${prefixCls}_with-mark`]: mark === null || mark === void 0 ? void 0 : mark.on,
+            [`${prefixCls}_disabled`]: disabled,
+            [`${prefixCls}_vertical`]: vertical,
+            classNames,
+        });
+    }
+    prepareStyle() {
+        return objectToString(Object.assign({}, get_default()(this.props, ['style'])));
+    }
+    handleWindowMouseUpForHandleFocusout(event) {
+        const { target } = event;
         if (target && this.view) {
-            var $target = jquery_1.default(target);
+            const $target = jquery_default()(target);
             if (!$target.closest(this.view).length) {
                 this.publish('setIndex', { index: -1 });
-                jquery_1.default(window).off({
+                jquery_default()(window).off({
                     mouseup: this.handleWindowMouseUpForHandleFocusout,
                 });
             }
         }
-    };
-    View.prototype.handleViewClick = function (index, event) {
-        jquery_1.default(window).off({ mouseup: this.handleWindowMouseUpForHandleFocusout });
-        jquery_1.default(window).on({ mouseup: this.handleWindowMouseUpForHandleFocusout });
-        var _a = event || {}, _b = _a.clientY, coordinateY = _b === void 0 ? 0 : _b, _c = _a.pageX, coordinateX = _c === void 0 ? 0 : _c;
+    }
+    handleViewClick(index, event) {
+        jquery_default()(window).off({ mouseup: this.handleWindowMouseUpForHandleFocusout });
+        jquery_default()(window).on({ mouseup: this.handleWindowMouseUpForHandleFocusout });
+        const { clientY: coordinateY = 0, pageX: coordinateX = 0 } = event || {};
         this.publish('onChange', {
-            coordinateX: coordinateX,
-            coordinateY: coordinateY,
-            start: utils_1.getSliderStart({ props: this.props, view: this.view }),
-            length: utils_1.getSliderLength({ props: this.props, view: this.view }),
+            coordinateX,
+            coordinateY,
+            start: getSliderStart({ props: this.props, view: this.view }),
+            length: getSliderLength({ props: this.props, view: this.view }),
             action: 'onAfterChange',
         });
-    };
-    View.prototype.handleViewMouseDown = function (index) {
-        jquery_1.default(window).on({ mousemove: this.handleWindowMouseMove });
-        jquery_1.default(window).on({ mouseup: this.handleWindowMouseUp });
-        jquery_1.default(window).off({ mouseup: this.handleWindowMouseUpForHandleFocusout });
-        this.publish('onBeforeChange', { index: index });
-    };
-    View.prototype.handleWindowMouseUp = function () {
-        jquery_1.default(window).off({ mousemove: this.handleWindowMouseMove });
-        jquery_1.default(window).off({ mouseup: this.handleWindowMouseUp });
-        jquery_1.default(window).on({ mouseup: this.handleWindowMouseUpForHandleFocusout });
+    }
+    handleViewMouseDown(index) {
+        jquery_default()(window).on({ mousemove: this.handleWindowMouseMove });
+        jquery_default()(window).on({ mouseup: this.handleWindowMouseUp });
+        jquery_default()(window).off({ mouseup: this.handleWindowMouseUpForHandleFocusout });
+        this.publish('onBeforeChange', { index });
+    }
+    handleWindowMouseUp() {
+        jquery_default()(window).off({ mousemove: this.handleWindowMouseMove });
+        jquery_default()(window).off({ mouseup: this.handleWindowMouseUp });
+        jquery_default()(window).on({ mouseup: this.handleWindowMouseUpForHandleFocusout });
         this.publish('onAfterChange');
-    };
-    View.prototype.handleWindowMouseMove = function (event) {
-        var _a = event || {}, _b = _a.clientY, coordinateY = _b === void 0 ? 0 : _b, _c = _a.pageX, coordinateX = _c === void 0 ? 0 : _c;
+    }
+    handleWindowMouseMove(event) {
+        const { clientY: coordinateY = 0, pageX: coordinateX = 0 } = event || {};
         this.publish('onChange', {
-            coordinateX: coordinateX,
-            coordinateY: coordinateY,
-            start: utils_1.getSliderStart({ props: this.props, view: this.view }),
-            length: utils_1.getSliderLength({ props: this.props, view: this.view }),
+            coordinateX,
+            coordinateY,
+            start: getSliderStart({ props: this.props, view: this.view }),
+            length: getSliderLength({ props: this.props, view: this.view }),
         });
-    };
-    View.prototype.createOrUpdateSubViews = function () {
-        var count = utils_1.getCount(this.props);
-        this.rails = this.createOrUpdateSubView(this.rails, 1, view_1.default, 'click');
-        this.tracks = this.createOrUpdateSubView(this.tracks, count - 1 || 1, view_3.default);
-        this.dots = this.createOrUpdateSubView(this.dots, 1, view_4.default, 'click');
-        this.marks = this.createOrUpdateSubView(this.marks, 1, view_5.default, 'click');
-        this.handles = this.createOrUpdateSubView(this.handles, count, view_2.default, 'mousedown', true);
-    };
-    View.prototype.createOrUpdateSubView = function (views, count, SubView, action, withActive) {
-        var readyViews = __spreadArrays(views);
+    }
+    createOrUpdateSubViews() {
+        const count = getCount(this.props);
+        this.rails = this.createOrUpdateSubView(this.rails, 1, RailView, 'click');
+        this.tracks = this.createOrUpdateSubView(this.tracks, count - 1 || 1, TrackView);
+        this.dots = this.createOrUpdateSubView(this.dots, 1, DotsView, 'click');
+        this.marks = this.createOrUpdateSubView(this.marks, 1, MarksView, 'click');
+        this.handles = this.createOrUpdateSubView(this.handles, count, HandleView, 'mousedown', true);
+    }
+    createOrUpdateSubView(views, count, SubView, action, withActive) {
+        const readyViews = [...views];
         if (this.props) {
-            var handles = void 0;
-            var active = void 0;
-            var readyIndex = this.props.index;
+            let handles;
+            let active;
+            const { index: readyIndex } = this.props;
             if (action === 'mousedown') {
                 handles = {
                     handleViewMouseDown: this.handleViewMouseDown,
                 };
             }
             else if (action === 'click') {
-                if (utils_1.getCount(this.props) > 0) {
+                if (getCount(this.props) > 0) {
                     handles = {
                         handleViewClick: this.handleViewClick,
                     };
                 }
             }
-            for (var index = 0; index < count; index += 1) {
+            for (let index = 0; index < count; index += 1) {
                 if (withActive) {
                     active = index === readyIndex;
                 }
                 if (readyViews[index]) {
-                    var addition = readyViews[index].getAddition();
-                    addition = __assign(__assign({}, addition), { handles: handles, active: active });
+                    let addition = readyViews[index].getAddition();
+                    addition = Object.assign(Object.assign({}, addition), { handles, active });
                     readyViews[index].setAddition(addition);
                     readyViews[index].setProps(this.props);
                 }
                 else {
-                    readyViews[index] = new SubView({ index: index, handles: handles, active: active });
+                    readyViews[index] = new SubView({ index, handles, active });
                     readyViews[index].setProps(this.props);
                 }
             }
             View.cleanSubView(readyViews, count);
         }
         return readyViews;
-    };
-    View.prototype.appendSubViews = function () {
+    }
+    appendSubViews() {
         if (this.view) {
             this.rails.forEach(this.appendSubView);
             this.marks.forEach(this.appendSubView);
@@ -19793,51 +19189,199 @@ var View = /** @class */ (function (_super) {
             this.tracks.forEach(this.appendSubView);
             this.handles.forEach(this.appendSubView);
         }
-    };
-    View.prototype.appendSubView = function (subView) {
+    }
+    appendSubView(subView) {
         if (this.view) {
             subView.render(this.view);
         }
-    };
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [MouseEvent]),
-        __metadata("design:returntype", void 0)
-    ], View.prototype, "handleWindowMouseUpForHandleFocusout", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Number, Object]),
-        __metadata("design:returntype", void 0)
-    ], View.prototype, "handleViewClick", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Number]),
-        __metadata("design:returntype", void 0)
-    ], View.prototype, "handleViewMouseDown", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", void 0)
-    ], View.prototype, "handleWindowMouseUp", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [MouseEvent]),
-        __metadata("design:returntype", void 0)
-    ], View.prototype, "handleWindowMouseMove", null);
-    __decorate([
-        bind_decorator_1.default,
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], View.prototype, "appendSubView", null);
-    return View;
-}(pubsub_1.default));
-exports.default = View;
+    }
+}
+slider_view_decorate([
+    bind_decorator/* bind */.ak,
+    slider_view_metadata("design:type", Function),
+    slider_view_metadata("design:paramtypes", [MouseEvent]),
+    slider_view_metadata("design:returntype", void 0)
+], View.prototype, "handleWindowMouseUpForHandleFocusout", null);
+slider_view_decorate([
+    bind_decorator/* bind */.ak,
+    slider_view_metadata("design:type", Function),
+    slider_view_metadata("design:paramtypes", [Number, Object]),
+    slider_view_metadata("design:returntype", void 0)
+], View.prototype, "handleViewClick", null);
+slider_view_decorate([
+    bind_decorator/* bind */.ak,
+    slider_view_metadata("design:type", Function),
+    slider_view_metadata("design:paramtypes", [Number]),
+    slider_view_metadata("design:returntype", void 0)
+], View.prototype, "handleViewMouseDown", null);
+slider_view_decorate([
+    bind_decorator/* bind */.ak,
+    slider_view_metadata("design:type", Function),
+    slider_view_metadata("design:paramtypes", []),
+    slider_view_metadata("design:returntype", void 0)
+], View.prototype, "handleWindowMouseUp", null);
+slider_view_decorate([
+    bind_decorator/* bind */.ak,
+    slider_view_metadata("design:type", Function),
+    slider_view_metadata("design:paramtypes", [MouseEvent]),
+    slider_view_metadata("design:returntype", void 0)
+], View.prototype, "handleWindowMouseMove", null);
+slider_view_decorate([
+    bind_decorator/* bind */.ak,
+    slider_view_metadata("design:type", Function),
+    slider_view_metadata("design:paramtypes", [Object]),
+    slider_view_metadata("design:returntype", void 0)
+], View.prototype, "appendSubView", null);
+/* harmony default export */ const slider_view = (View);
+
+;// CONCATENATED MODULE: ./src/slider/presenter.ts
+var presenter_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var presenter_metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+class Presenter {
+    constructor(model, view) {
+        this.model = model;
+        this.view = view;
+        this.view.setProps(this.model.getProps());
+        this.initHandlesView();
+        this.initHandlesModel();
+    }
+    getProps() {
+        return this.model.getProps();
+    }
+    setProps(props) {
+        this.model.setProps(props);
+    }
+    initHandlesView() {
+        this.view.subscribe('onBeforeChange', this.onBeforeChange);
+        this.view.subscribe('onAfterChange', this.onAfterChange);
+        this.view.subscribe('onChange', this.onChange);
+        this.view.subscribe('setIndex', this.setIndex);
+    }
+    initHandlesModel() {
+        this.model.subscribe('setPropsForView', this.setPropsForView);
+    }
+    onChange(options) {
+        this.model.onChange(options);
+    }
+    onAfterChange() {
+        this.model.onAfterChange();
+    }
+    onBeforeChange(options) {
+        this.model.onBeforeChange(options);
+    }
+    setPropsForView(props) {
+        this.view.setProps(props);
+    }
+    setIndex(options) {
+        this.model.setIndex(options);
+    }
+}
+presenter_decorate([
+    bind_decorator/* default */.ZP,
+    presenter_metadata("design:type", Function),
+    presenter_metadata("design:paramtypes", [Object]),
+    presenter_metadata("design:returntype", void 0)
+], Presenter.prototype, "onChange", null);
+presenter_decorate([
+    bind_decorator/* default */.ZP,
+    presenter_metadata("design:type", Function),
+    presenter_metadata("design:paramtypes", []),
+    presenter_metadata("design:returntype", void 0)
+], Presenter.prototype, "onAfterChange", null);
+presenter_decorate([
+    bind_decorator/* default */.ZP,
+    presenter_metadata("design:type", Function),
+    presenter_metadata("design:paramtypes", [Object]),
+    presenter_metadata("design:returntype", void 0)
+], Presenter.prototype, "onBeforeChange", null);
+presenter_decorate([
+    bind_decorator/* default */.ZP,
+    presenter_metadata("design:type", Function),
+    presenter_metadata("design:paramtypes", [Object]),
+    presenter_metadata("design:returntype", void 0)
+], Presenter.prototype, "setPropsForView", null);
+presenter_decorate([
+    bind_decorator/* default */.ZP,
+    presenter_metadata("design:type", Function),
+    presenter_metadata("design:paramtypes", [Object]),
+    presenter_metadata("design:returntype", void 0)
+], Presenter.prototype, "setIndex", null);
+
+;// CONCATENATED MODULE: ./src/slider/index.ts
+
+
+
+
+
+
+class slider_Slider {
+    constructor(element, props) {
+        this.model = new model(prepareData(props));
+        this.view = new slider_view();
+        this.presenter = new Presenter(this.model, this.view);
+        this.view.render(element);
+    }
+    getProps() {
+        const defaultProps = this.presenter.getProps();
+        return defaultProps;
+    }
+    setProps(props) {
+        this.presenter.setProps(props);
+    }
+    pickProps(keys) {
+        return pick_default()(this.presenter.getProps(), keys);
+    }
+}
+slider_Slider.PLUGIN_NAME = 'slider';
+function createSlider($element, props) {
+    return $element.each(function each() {
+        const $this = jquery_default()(this);
+        if (!$this.data(slider_Slider.PLUGIN_NAME)) {
+            $this.data(slider_Slider.PLUGIN_NAME, new slider_Slider($this, props));
+        }
+        else if ($this.data(slider_Slider.PLUGIN_NAME)) {
+            const slider = $this.data(slider_Slider.PLUGIN_NAME);
+            if (slider) {
+                slider.setProps(props);
+            }
+        }
+    });
+}
+
+
+// EXTERNAL MODULE: ./src/style.scss
+var style = __webpack_require__(7254);
+;// CONCATENATED MODULE: ./src/index.ts
+
+
+
+// (function handleWindowLoaded($: JQueryStatic) {
+//   // eslint-disable-next-line no-param-reassign
+//   console.log('JQuery $ : ', $);
+//   console.log('$.fn1 : ', $.fn);
+//   $.fn.slider = function makeCreateSlider(props?: Props): JQuery {
+//     console.log('makeCreateSlider this : ', this);
+//     return createSlider(this, props);
+//   };
+//   console.log('$.fn2 : ', $.fn);
+// })(JQuery);
+// console.log('JQuery : ', JQuery);
+console.log('$$$ : ', (jquery_default()));
+(jquery_default()).fn.slider = function makeCreateSlider(props) {
+    console.log('makeCreateSlider this : ', this);
+    return createSlider(this, props);
+};
+console.log('$.fn : ', (jquery_default()).fn);
+console.log('createSlider : ', createSlider);
+/* harmony default export */ const src = ((/* unused pure expression or super */ null && (Slider)));
 
 
 /***/ })
@@ -19923,7 +19467,7 @@ exports.default = View;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "725f195b9614b6762389"
+/******/ 		__webpack_require__.h = () => "6bc088133878e8d94615"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -20878,7 +20422,7 @@ exports.default = View;
 /******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__(3607);
+/******/ 	__webpack_require__(2177);
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=index.js.map

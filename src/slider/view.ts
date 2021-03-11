@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import bind from 'bind-decorator';
+import { bind } from 'bind-decorator';
 import classnames from 'classnames';
 import get from 'lodash/get';
 

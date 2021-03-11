@@ -2,19 +2,21 @@
   "name": "air-range-slider",
   "version": "1.0.1",
   "description": "jQuery range slider",
-  "main": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "test": "jest",
-    "start": "webpack --mode=development --env mode=development serve",
     "build": "webpack --mode=production",
     "build:dev": "webpack --env mode=development --mode=development",
-    "lint": "eslint src/ --ext .ts",
-    "eslint:dump": "eslint --print-config ./.eslintrc.json"
+    "start": "webpack --mode=development --env mode=development serve",
+    "lint": "eslint --ext .ts src/",
+    "test": "jest"
   },
   "homepage": "https://victordesyatkin.github.io/slider/index.html",
   "author": "https://github.com/victordesyatkin",
-  "license": "MIT",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/victordesyatkin/air-range-slider"
