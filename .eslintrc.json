@@ -1,0 +1,42 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:eslint-comments/recommended",
+    "plugin:jest/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:fsd/all"
+  ],
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "fsd",
+    "json",
+    "i18n-json",
+    "prettier",
+    "pug"
+  ],
+  "globals": {
+    "$": true
+  },
+  "rules": {
+    "@typescript-eslint/unbound-method": 0,
+    "fsd/hof-name-prefix": "error",
+    "fsd/no-heavy-constructor": "error",
+    "fsd/jq-cache-dom-elements": "error",
+    "fsd/jq-use-js-prefix-in-selector": "error",
+    "fsd/no-function-declaration-in-event-listener": "error",
+    "fsd/split-conditionals": "error"
+  }
+}
