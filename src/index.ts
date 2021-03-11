@@ -24,7 +24,8 @@ $.fn.slider = function makeCreateSlider(props?: Props): JQuery {
 };
 
 console.log('$.fn : ', $.fn);
+console.log('$.fn.slider : ', $.fn.slider);
 
 console.log('createSlider : ', createSlider);
 
-export default Slider;
+export default createSlider;
