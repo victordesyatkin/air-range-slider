@@ -19245,10 +19245,16 @@ var index_1 = __webpack_require__(8296);
 __webpack_require__(7254);
 (function handleWindowLoaded($) {
     // eslint-disable-next-line no-param-reassign
+    console.log('JQuery $ : ', $);
+    console.log('$.fn1 : ', $.fn);
     $.fn.slider = function makeCreateSlider(props) {
+        console.log('makeCreateSlider this : ', this);
         return index_1.createSlider(this, props);
     };
+    console.log('$.fn2 : ', $.fn);
 })(jquery_1.default);
+console.log('JQuery : ', jquery_1.default);
+console.log('createSlider : ', index_1.createSlider);
 exports.default = index_1.Slider;
 
 
@@ -19917,7 +19923,7 @@ exports.default = View;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "6cb9fba434e02a842fb3"
+/******/ 		__webpack_require__.h = () => "725f195b9614b6762389"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
