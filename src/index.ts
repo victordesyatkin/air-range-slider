@@ -18,7 +18,6 @@ import './style.scss';
 // console.log('JQuery : ', JQuery);
 
 console.log('$$$ : ', $);
-
 $.fn.slider = function makeCreateSlider(props?: Props): JQuery {
   console.log('makeCreateSlider this : ', this);
   return createSlider(this, props);

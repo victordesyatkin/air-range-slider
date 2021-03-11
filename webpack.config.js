@@ -13,12 +13,7 @@ module.exports = (env = {}) => {
   const getStyleLoaders = () => {
     return [
       isProduction
-        ? {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: `${path.resolve(__dirname, "dist")}/`,
-            },
-          }
+        ? MiniCssExtractPlugin.loader
         : 'style-loader',
       'css-modules-typescript-loader',
       {
@@ -31,13 +26,18 @@ module.exports = (env = {}) => {
   const getPlugins = () => {
     const plugins = [
       new CleanWebpackPlugin(),
+      new webpack.ProgressPlugin(),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+      }),
       new webpack.HotModuleReplacementPlugin(),
     ];
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: isDevelopment ? "[name].css" : "[name].[hash].css",
-          chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css",
+          filename: "index.css",
+          chunkFilename: "[id].css",
         })
       );
     }

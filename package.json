@@ -4,13 +4,10 @@
   "description": "jQuery range slider",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
   "scripts": {
-    "build": "webpack --mode=production",
-    "build:dev": "webpack --env mode=development --mode=development",
-    "start": "webpack --mode=development --env mode=development serve",
+    "build": "webpack --env mode=production",
+    "build:dev": "webpack --env mode=development",
+    "start": "webpack --env mode=development serve",
     "lint": "eslint --ext .ts src/",
     "test": "jest"
   },
