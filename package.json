@@ -1,6 +1,6 @@
 {
   "name": "air-range-slider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jQuery range slider",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
