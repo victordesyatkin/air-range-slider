@@ -7,15 +7,23 @@ const webpack = require("webpack");
 module.exports = (env = {}) => {
   const { mode = "development" } = env;
 
-  const isProd = mode === "production";
-  const isDev = mode === "development";
+  const isProduction = mode === 'production';
+  const isDevelopment = mode === 'development';
 
   const getStyleLoaders = () => {
     return [
-      isProd ? MiniCssExtractPlugin.loader : "style-loader",
+      isProduction
+        ? {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: `${path.resolve(__dirname, "dist")}/`,
+            },
+          }
+        : 'style-loader',
+      'css-modules-typescript-loader',
       {
-        loader: "css-loader",
-        options: { sourceMap: isDev },
+        loader: 'css-loader',
+        options: { sourceMap: isDevelopment },
       },
     ];
   };
@@ -25,14 +33,11 @@ module.exports = (env = {}) => {
       new CleanWebpackPlugin(),
       new webpack.HotModuleReplacementPlugin(),
     ];
-    if (isProd) {
+    if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: isDev ? "[name].css" : "[name].[hash].css",
-          chunkFilename: isDev ? "[id].css" : "[id].[hash].css",
-          insertAt: {
-            after: "title",
-          },
+          filename: isDevelopment ? "[name].css" : "[name].[hash].css",
+          chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css",
         })
       );
     }
@@ -40,15 +45,18 @@ module.exports = (env = {}) => {
   };
 
   return {
-    entry: "./src/index.ts",
-    mode: isProd ? "production" : isDev && "development",
-    devtool: isDev && "source-map",
+    entry: './src/index.ts',
+    mode: isProduction ? 'production' : isDevelopment && 'development',
+    optimization: {
+      minimize: false,
+    },
+    devtool: isDevelopment && 'source-map',
 
     module: {
       rules: [
         {
           test: /\.ts?$/,
-          use: "ts-loader",
+          use: 'ts-loader',
           exclude: /node_modules/,
         },
         {
@@ -58,15 +66,19 @@ module.exports = (env = {}) => {
 
         {
           test: /\.(s[ca]ss)$/,
-          use: [...getStyleLoaders(), "resolve-url-loader", "sass-loader"],
+          use: [
+            ...getStyleLoaders(),
+            'resolve-url-loader',
+            'sass-loader',
+          ],
         },
       ],
     },
     plugins: getPlugins(),
 
     output: {
-      path: path.resolve(__dirname, "dist"),
-      chunkFilename: "[id].[chunkhash].js",
+      path: path.resolve(__dirname, 'dist'),
+      chunkFilename: '[id].[hash].js',
     },
 
     devServer: {
@@ -76,8 +88,8 @@ module.exports = (env = {}) => {
     },
 
     resolve: {
-      extensions: [".ts", ".js", ".css", ".scss"],
-      modules: ["src", "node_modules"],
+      extensions: ['.ts', '.js', '.css', '.scss'],
+      modules: ['src', 'node_modules'],
     },
   };
 };
