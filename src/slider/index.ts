@@ -1,4 +1,4 @@
-import JQuery from 'jquery';
+import $ from 'jquery';
 import pick from 'lodash/pick';
 
 import { prepareData } from '../helpers/utils';
@@ -41,8 +41,8 @@ class Slider {
 }
 
 function createSlider($element: JQuery<HTMLElement>, props?: Props): JQuery {
-  return $element.each(function each() {
-    const $this = JQuery(this);
+  $element.each(function each() {
+    const $this = $(this);
     if (!$this.data(Slider.PLUGIN_NAME)) {
       $this.data(Slider.PLUGIN_NAME, new Slider($this, props));
     } else if ($this.data(Slider.PLUGIN_NAME)) {
@@ -52,6 +52,7 @@ function createSlider($element: JQuery<HTMLElement>, props?: Props): JQuery {
       }
     }
   });
+  return $element;
 }
 
 export { Slider, createSlider };
