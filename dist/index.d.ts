@@ -1,3 +1,3 @@
-import { createSlider } from './slider/index';
+import { Slider, createSlider } from './slider/index';
 import './style.scss';
-export default createSlider;
+export { Slider, createSlider };

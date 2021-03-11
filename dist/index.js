@@ -17214,7 +17214,7 @@ module.exports = function (urlString) {
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1615492377382
+      // 1615495616256
       var cssReload = __webpack_require__(4783)(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -17228,7 +17228,7 @@ module.exports = function (urlString) {
 
 "use strict";
 
-// UNUSED EXPORTS: default
+// UNUSED EXPORTS: Slider, createSlider
 
 // EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
 var jquery = __webpack_require__(9755);
@@ -19128,8 +19128,8 @@ class Slider {
     }
 }
 Slider.PLUGIN_NAME = 'slider';
-function slider_createSlider($element, props) {
-    return $element.each(function each() {
+function createSlider($element, props) {
+    $element.each(function each() {
         const $this = jquery_default()(this);
         if (!$this.data(Slider.PLUGIN_NAME)) {
             $this.data(Slider.PLUGIN_NAME, new Slider($this, props));
@@ -19141,6 +19141,7 @@ function slider_createSlider($element, props) {
             }
         }
     });
+    return $element;
 }
 
 
@@ -19164,12 +19165,12 @@ var style = __webpack_require__(1577);
 console.log('$$$ : ', (jquery_default()));
 (jquery_default()).fn.slider = function makeCreateSlider(props) {
     console.log('makeCreateSlider this : ', this);
-    return slider_createSlider(this, props);
+    return createSlider(this, props);
 };
 console.log('$.fn : ', (jquery_default()).fn);
 console.log('$.fn.slider : ', (jquery_default()).fn.slider);
-console.log('createSlider : ', slider_createSlider);
-/* harmony default export */ const src = ((/* unused pure expression or super */ null && (createSlider)));
+console.log('createSlider : ', createSlider);
+
 
 
 /***/ })
@@ -19264,7 +19265,7 @@ console.log('createSlider : ', slider_createSlider);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "84775dd887b6db571866"
+/******/ 		__webpack_require__.h = () => "03d68d6dea61fe2657ae"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
