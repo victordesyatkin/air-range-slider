@@ -17214,7 +17214,7 @@ module.exports = function (urlString) {
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1615490619443
+      // 1615492377382
       var cssReload = __webpack_require__(4783)(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -19109,7 +19109,7 @@ presenter_decorate([
 
 
 
-class slider_Slider {
+class Slider {
     constructor(element, props) {
         this.model = new model(prepareData(props));
         this.view = new slider_view();
@@ -19127,15 +19127,15 @@ class slider_Slider {
         return pick_default()(this.presenter.getProps(), keys);
     }
 }
-slider_Slider.PLUGIN_NAME = 'slider';
-function createSlider($element, props) {
+Slider.PLUGIN_NAME = 'slider';
+function slider_createSlider($element, props) {
     return $element.each(function each() {
         const $this = jquery_default()(this);
-        if (!$this.data(slider_Slider.PLUGIN_NAME)) {
-            $this.data(slider_Slider.PLUGIN_NAME, new slider_Slider($this, props));
+        if (!$this.data(Slider.PLUGIN_NAME)) {
+            $this.data(Slider.PLUGIN_NAME, new Slider($this, props));
         }
-        else if ($this.data(slider_Slider.PLUGIN_NAME)) {
-            const slider = $this.data(slider_Slider.PLUGIN_NAME);
+        else if ($this.data(Slider.PLUGIN_NAME)) {
+            const slider = $this.data(Slider.PLUGIN_NAME);
             if (slider) {
                 slider.setProps(props);
             }
@@ -19164,11 +19164,12 @@ var style = __webpack_require__(1577);
 console.log('$$$ : ', (jquery_default()));
 (jquery_default()).fn.slider = function makeCreateSlider(props) {
     console.log('makeCreateSlider this : ', this);
-    return createSlider(this, props);
+    return slider_createSlider(this, props);
 };
 console.log('$.fn : ', (jquery_default()).fn);
-console.log('createSlider : ', createSlider);
-/* harmony default export */ const src = ((/* unused pure expression or super */ null && (Slider)));
+console.log('$.fn.slider : ', (jquery_default()).fn.slider);
+console.log('createSlider : ', slider_createSlider);
+/* harmony default export */ const src = ((/* unused pure expression or super */ null && (createSlider)));
 
 
 /***/ })
@@ -19263,7 +19264,7 @@ console.log('createSlider : ', createSlider);
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "04361e43c41f73ad2ec0"
+/******/ 		__webpack_require__.h = () => "84775dd887b6db571866"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
