@@ -1,7 +1,5 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
-import { Props } from './types';
-import { Slider, createSlider } from './slider/index';
 import './style.scss';
 
 // (function handleWindowLoaded($: JQueryStatic) {
@@ -17,15 +15,22 @@ import './style.scss';
 
 // console.log('JQuery : ', JQuery);
 
-console.log('$$$ : ', $);
-$.fn.slider = function makeCreateSlider(props?: Props): JQuery {
-  console.log('makeCreateSlider this : ', this);
-  return createSlider(this, props);
-};
+console.log('HELLO WORLD');
 
-console.log('$.fn : ', $.fn);
-console.log('$.fn.slider : ', $.fn.slider);
+// console.log('$$$ : ', $);
+// $.fn.slider = function makeCreateSlider(props?: { index: number }): JQuery {
+//   console.log('makeCreateSlider this : ', this);
+//   console.log('makeCreateSlider props : ', props);
+//   const a = () => {};
+//   const b = () => {};
+//   return this;
+// };
 
-console.log('createSlider : ', createSlider);
+// console.log('$.fn : ', $.fn);
+// console.log('$.fn.slider : ', $.fn.slider);
 
-export { Slider, createSlider };
+// const qwerty = () => {
+//   console.log('qwerty');
+// };
+
+// export default qwerty;

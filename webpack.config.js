@@ -15,7 +15,7 @@ module.exports = (env = {}) => {
       isProduction
         ? MiniCssExtractPlugin.loader
         : 'style-loader',
-      'css-modules-typescript-loader',
+      // 'css-modules-typescript-loader',
       {
         loader: 'css-loader',
         options: { sourceMap: isDevelopment },
@@ -30,6 +30,8 @@ module.exports = (env = {}) => {
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery',
       }),
       new webpack.HotModuleReplacementPlugin(),
     ];
@@ -66,20 +68,25 @@ module.exports = (env = {}) => {
 
         {
           test: /\.(s[ca]ss)$/,
-          use: [
-            ...getStyleLoaders(),
-            'resolve-url-loader',
-            'sass-loader',
-          ],
+          use: [...getStyleLoaders(), 'resolve-url-loader', 'sass-loader'],
         },
       ],
     },
     plugins: getPlugins(),
 
+    experiments: {
+      outputModule: true,
+    },
+
+    // libraryTarget: 'module',
+
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
       chunkFilename: '[id].[hash].js',
+      module: true,
+      // library: 'myApp',
+      libraryTarget: 'module'
     },
 
     devServer: {
