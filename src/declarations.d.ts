@@ -1,5 +1,4 @@
 import { Props } from './types';
-
 declare global {
   interface Window {
     $: JQuery;
