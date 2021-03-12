@@ -74,19 +74,11 @@ module.exports = (env = {}) => {
     },
     plugins: getPlugins(),
 
-    experiments: {
-      outputModule: true,
-    },
-
-    // libraryTarget: 'module',
-
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
       chunkFilename: '[id].[hash].js',
-      module: true,
-      // library: 'myApp',
-      libraryTarget: 'module'
+      libraryTarget: 'umd',
     },
 
     devServer: {
