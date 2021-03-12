@@ -11,14 +11,13 @@ module.exports = (env = {}) => {
   const isDevelopment = mode === 'development';
 
   const getStyleLoaders = () => {
+    console.log('isProduction : ', isProduction);
     return [
-      isProduction
-        ? MiniCssExtractPlugin.loader
-        : 'style-loader',
-        'css-modules-typescript-loader',
+      isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+      //'css-modules-typescript-loader',
       {
         loader: 'css-loader',
-        options: { sourceMap: isDevelopment },
+        options: { sourceMap: isDevelopment, modules: true },
       },
     ];
   };
@@ -38,7 +37,7 @@ module.exports = (env = {}) => {
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: '[name].[hash:8].css',
+          filename: '[name].[hash:9].css',
           chunkFilename: '[id].[chunkhash:8].css',
         })
       );
@@ -48,7 +47,7 @@ module.exports = (env = {}) => {
 
   return {
     entry: './src/index.ts',
-    mode: isProduction ? 'production' : isDevelopment && 'development',
+    mode: isProduction ? 'production' : 'development',
     optimization: {
       minimize: false,
     },
@@ -62,7 +61,7 @@ module.exports = (env = {}) => {
       umdNamedDefine: true,
     },
 
-    devtool: isDevelopment && 'source-map',
+    devtool: isDevelopment ? 'source-map' : undefined,
 
     module: {
       rules: [
@@ -78,7 +77,17 @@ module.exports = (env = {}) => {
 
         {
           test: /\.(s[ca]ss)$/,
-          use: [...getStyleLoaders(), 'resolve-url-loader', 'sass-loader'],
+          use: [
+            ...getStyleLoaders(),
+            'resolve-url-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                // Prefer `dart-sass`
+                implementation: require('sass'),
+              },
+            },
+          ],
         },
       ],
     },

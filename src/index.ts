@@ -1,6 +1,6 @@
 // import $ from 'jquery';
 
-// import './style.scss';
+import './style.scss';
 
 // (function handleWindowLoaded($: JQueryStatic) {
 //   // eslint-disable-next-line no-param-reassign
@@ -30,7 +30,7 @@ console.log('HELLO WORLD');
 // console.log('$.fn.slider : ', $.fn.slider);
 
 const qwerty = () => {
-  console.log('qwerty');
+  console.log('qwerty!!!');
 };
 
 export default qwerty;
