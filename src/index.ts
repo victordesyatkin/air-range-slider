@@ -1,6 +1,6 @@
 // import $ from 'jquery';
 
-import './style.scss';
+// import './style.scss';
 
 // (function handleWindowLoaded($: JQueryStatic) {
 //   // eslint-disable-next-line no-param-reassign

@@ -15,7 +15,7 @@ module.exports = (env = {}) => {
       isProduction
         ? MiniCssExtractPlugin.loader
         : 'style-loader',
-      // 'css-modules-typescript-loader',
+        'css-modules-typescript-loader',
       {
         loader: 'css-loader',
         options: { sourceMap: isDevelopment },
@@ -38,8 +38,8 @@ module.exports = (env = {}) => {
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: "index.css",
-          chunkFilename: "[id].css",
+          filename: '[name].[hash:8].css',
+          chunkFilename: '[id].[chunkhash:8].css',
         })
       );
     }
@@ -52,6 +52,16 @@ module.exports = (env = {}) => {
     optimization: {
       minimize: false,
     },
+
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'index.js',
+      chunkFilename: '[id].[chunkhash:8].js',
+      libraryTarget: 'umd',
+      library: 'air-range-slider',
+      umdNamedDefine: true,
+    },
+
     devtool: isDevelopment && 'source-map',
 
     module: {
@@ -72,16 +82,8 @@ module.exports = (env = {}) => {
         },
       ],
     },
-    plugins: getPlugins(),
 
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'index.js',
-      chunkFilename: '[id].[hash].js',
-      libraryTarget: 'umd',
-      library: 'air-range-slider',
-      umdNamedDefine: true,
-    },
+    plugins: getPlugins(),
 
     devServer: {
       hot: true,
