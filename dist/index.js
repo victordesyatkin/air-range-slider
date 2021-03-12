@@ -2,19 +2,19 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
+		define("air-range-slider", [], factory);
+	else if(typeof exports === 'object')
+		exports["air-range-slider"] = factory();
+	else
+		root["air-range-slider"] = factory();
 })(self, function() {
 return /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 783:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* eslint-env browser */
@@ -234,6 +234,7 @@ module.exports = function (moduleId, options) {
 /***/ 618:
 /***/ ((module) => {
 
+"use strict";
 
 
 /* eslint-disable */
@@ -275,11 +276,12 @@ module.exports = function (urlString) {
 /***/ 126:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1615531363701
+      // 1615532899454
       var cssReload = __webpack_require__(783)(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -289,39 +291,67 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 607:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// import $ from 'jquery';
+(function (factory) {
+    if ( true && typeof module.exports === "object") {
+        var v = factory(__webpack_require__(875), exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(126)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    require("./style.scss");
+    // (function handleWindowLoaded($: JQueryStatic) {
+    //   // eslint-disable-next-line no-param-reassign
+    //   console.log('JQuery $ : ', $);
+    //   console.log('$.fn1 : ', $.fn);
+    //   $.fn.slider = function makeCreateSlider(props?: Props): JQuery {
+    //     console.log('makeCreateSlider this : ', this);
+    //     return createSlider(this, props);
+    //   };
+    //   console.log('$.fn2 : ', $.fn);
+    // })(JQuery);
+    // console.log('JQuery : ', JQuery);
+    console.log('HELLO WORLD');
+    // console.log('$$$ : ', $);
+    // $.fn.slider = function makeCreateSlider(props?: { index: number }): JQuery {
+    //   console.log('makeCreateSlider this : ', this);
+    //   console.log('makeCreateSlider props : ', props);
+    //   const a = () => {};
+    //   const b = () => {};
+    //   return this;
+    // };
+    // console.log('$.fn : ', $.fn);
+    // console.log('$.fn.slider : ', $.fn.slider);
+    var qwerty = function () {
+        console.log('qwerty');
+    };
+    exports.default = qwerty;
+});
 
 
-// import $ from 'jquery';
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-__webpack_require__(126);
-// (function handleWindowLoaded($: JQueryStatic) {
-//   // eslint-disable-next-line no-param-reassign
-//   console.log('JQuery $ : ', $);
-//   console.log('$.fn1 : ', $.fn);
-//   $.fn.slider = function makeCreateSlider(props?: Props): JQuery {
-//     console.log('makeCreateSlider this : ', this);
-//     return createSlider(this, props);
-//   };
-//   console.log('$.fn2 : ', $.fn);
-// })(JQuery);
-// console.log('JQuery : ', JQuery);
-console.log('HELLO WORLD');
-// console.log('$$$ : ', $);
-// $.fn.slider = function makeCreateSlider(props?: { index: number }): JQuery {
-//   console.log('makeCreateSlider this : ', this);
-//   console.log('makeCreateSlider props : ', props);
-//   const a = () => {};
-//   const b = () => {};
-//   return this;
-// };
-// console.log('$.fn : ', $.fn);
-// console.log('$.fn.slider : ', $.fn.slider);
-// const qwerty = () => {
-//   console.log('qwerty');
-// };
-// export default qwerty;
+/***/ }),
 
+/***/ 875:
+/***/ ((module) => {
+
+function webpackEmptyContext(req) {
+	var e = new Error("Cannot find module '" + req + "'");
+	e.code = 'MODULE_NOT_FOUND';
+	throw e;
+}
+webpackEmptyContext.keys = () => [];
+webpackEmptyContext.resolve = webpackEmptyContext;
+webpackEmptyContext.id = 875;
+module.exports = webpackEmptyContext;
 
 /***/ })
 
@@ -388,7 +418,7 @@ console.log('HELLO WORLD');
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "89233d7dc63115de8640"
+/******/ 		__webpack_require__.h = () => "15a47ed7a14105d8b0fa"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

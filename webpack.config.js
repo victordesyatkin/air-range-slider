@@ -79,6 +79,8 @@ module.exports = (env = {}) => {
       filename: 'index.js',
       chunkFilename: '[id].[hash].js',
       libraryTarget: 'umd',
+      library: 'air-range-slider',
+      umdNamedDefine: true,
     },
 
     devServer: {

@@ -29,8 +29,8 @@ console.log('HELLO WORLD');
 // console.log('$.fn : ', $.fn);
 // console.log('$.fn.slider : ', $.fn.slider);
 
-// const qwerty = () => {
-//   console.log('qwerty');
-// };
+const qwerty = () => {
+  console.log('qwerty');
+};
 
-// export default qwerty;
+export default qwerty;
