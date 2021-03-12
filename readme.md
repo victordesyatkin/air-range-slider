@@ -15,6 +15,7 @@ npm i -S air-range-slider
 ```javascript
 import $ from 'jquery';
 import 'air-range-slider';
+import 'air-range-slider/dist/style.css';
 ```
 
 3. Initialize plugin:
