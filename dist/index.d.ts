@@ -1,2 +1,2 @@
-declare const qwerty: () => void;
-export default qwerty;
+import { Slider } from './slider/index';
+export default Slider;

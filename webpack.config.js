@@ -13,10 +13,6 @@ module.exports = (env = {}) => {
     const plugins = [
       new CleanWebpackPlugin(),
       new webpack.ProgressPlugin(),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-      }),
       new webpack.HotModuleReplacementPlugin(),
     ];
     return plugins;
@@ -24,9 +20,11 @@ module.exports = (env = {}) => {
 
   return {
     entry: './src/index.ts',
+
     mode: isProduction ? 'production' : 'development',
+
     optimization: {
-      minimize: false,
+      minimize: isProduction,
     },
 
     output: {
@@ -36,6 +34,17 @@ module.exports = (env = {}) => {
       libraryTarget: 'umd',
       library: 'air-range-slider',
       umdNamedDefine: true,
+      globalObject: 'this',
+    },
+
+    externals: {
+      jquery: {
+        commonjs: 'jquery',
+        commonjs2: 'jquery',
+        amd: 'jquery',
+        root: 'jQuery',
+      },
+      window: 'window',
     },
 
     devtool: isDevelopment ? 'source-map' : undefined,
