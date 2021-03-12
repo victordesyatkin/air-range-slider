@@ -1,0 +1,6 @@
+.*
+**/tsconfig.json
+**/jest.config.json
+**/webpack.config.js
+node_modules
+src

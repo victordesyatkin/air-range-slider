@@ -19,14 +19,7 @@
     "project": "tsconfig.json",
     "tsconfigRootDir": "."
   },
-  "plugins": [
-    "@typescript-eslint",
-    "fsd",
-    "json",
-    "i18n-json",
-    "prettier",
-    "pug"
-  ],
+  "plugins": ["@typescript-eslint", "json", "i18n-json", "prettier", "fsd"],
   "globals": {
     "$": true
   },
