@@ -7,3 +7,5 @@ declare global {
     slider(props?: Props): JQuery;
   }
 }
+
+declare module '*.scss';

@@ -1,10 +1,10 @@
-"use strict";
-const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpack = require("webpack");
+'use strict';
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = (env = {}) => {
-  const { mode = "development" } = env;
+  const { mode = 'development' } = env;
 
   const isProduction = mode === 'production';
   const isDevelopment = mode === 'development';
