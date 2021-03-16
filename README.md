@@ -10,7 +10,7 @@ Customizable jQuery range slider, built with es5 and css-flexbox.
 npm i -S air-range-slider
 ```
 
-2. Import JQuery and plugin in your project:
+2. Import JQuery version 3.5.1 and plugin in your project:
 
 ```javascript
 import $ from 'jquery';
